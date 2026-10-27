@@ -9,12 +9,12 @@ import XCTest
 /// The hand-drawn icons are the Packing app's and are certain, so most of the words here are
 /// theirs. A check on one of Apple's symbols is only made when that symbol is in the catalog.
 final class SearchTests: XCTestCase {
-    private static func isHand(_ ref: IconRef) -> Bool {
+    private static func isHand(_ ref: IconChoice) -> Bool {
         ref.kind == .hand
     }
 
     /// Every icon a search finds, in the picker's order.
-    private func found(_ query: String) -> [IconRef] {
+    private func found(_ query: String) -> [IconChoice] {
         IconLibrary.search(query).flatMap { $0.refs }
     }
 

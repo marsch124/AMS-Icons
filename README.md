@@ -48,7 +48,7 @@ package. That is the wanted behaviour: a new icon never appears in an app by sur
 
 ## How an icon is stored
 
-A choice is an `IconRef`. It is stored as **one string**:
+A choice is an `IconChoice`. It is stored as **one string**:
 
 | Kind | Stored as | Example |
 |---|---|---|
@@ -56,18 +56,18 @@ A choice is an `IconRef`. It is stored as **one string**:
 | Apple symbol | `symbol:` and the SF Symbols name | `symbol:figure.run` |
 
 ```swift
-let ref = IconRef.hand("bike")
+let ref = IconChoice.hand("bike")
 ref.stored                          // "hand:bike"
-IconRef(stored: "symbol:book")      // the Apple symbol "book"
-IconRef(stored: "bike")             // nil: a word with no prefix is not an icon
+IconChoice(stored: "symbol:book")      // the Apple symbol "book"
+IconChoice(stored: "bike")             // nil: a word with no prefix is not an icon
 ```
 
 - Spaces around the string, and around the name, are taken off.
 - The prefix is written in small letters. `Hand:bike` is not an icon.
-- `IconRef(stored:)` gives `nil` for an empty string, for a prefix with no name, for an unknown
+- `IconChoice(stored:)` gives `nil` for an empty string, for a prefix with no name, for an unknown
   prefix, and for a bare word. The package never guesses what an older value meant. The app
   decides.
-- `IconRef` is `Codable` and writes that same one string, so it fits in a JSON field, a settings
+- `IconChoice` is `Codable` and writes that same one string, so it fits in a JSON field, a settings
   line or a key-value store. Decoding a bad string throws.
 - Whether the icon is in this copy of the package is a different question. Ask
   `IconLibrary.exists(ref)`. A newer app may store an icon that an older copy of the package
@@ -121,7 +121,7 @@ IconTile(ref, colour: IconColour.of(key: "blue"), fallbackTint: .green, letter: 
 .sheet(isPresented: $choosing) {
     IconPicker(
         title: project.title,
-        chosen: project.icon,                  // IconRef?
+        chosen: project.icon,                  // IconChoice?
         colour: project.colour,                // IconColour?  (nil is Automatic)
         fallbackTint: .green,                  // what Automatic looks like
         onPick: { project.icon = $0 },         // nil means "No icon"
@@ -323,7 +323,7 @@ with the newest Xcode.
 ```
 Package.swift
 Sources/AMSIcons/
-  IconRef.swift            the stored choice
+  IconChoice.swift            the stored choice
   HandIcon.swift           a hand-drawn icon and its six headings
   HandIconCatalog.swift    the 132 drawings
   HandIconKeywords.swift   their hidden words

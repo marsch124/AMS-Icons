@@ -32,10 +32,10 @@ import UIKit
 /// `icon.choice.symbol:book`). The chosen colour and the chosen icon carry `.isSelected`.
 public struct IconPicker: View {
     private let title: String
-    private let chosen: IconRef?
+    private let chosen: IconChoice?
     private let colour: IconColour?
     private let fallbackTint: Color
-    private let onPick: (IconRef?) -> Void
+    private let onPick: (IconChoice?) -> Void
     private let onColour: (IconColour?) -> Void
     private let onCancel: (() -> Void)?
 
@@ -53,8 +53,8 @@ public struct IconPicker: View {
     ///   - onPick: Called with the icon pressed, or nil for **No icon**.
     ///   - onColour: Called with the colour pressed, or nil for **Automatic**.
     ///   - onCancel: Called when **Cancel** or Escape is pressed.
-    public init(title: String, chosen: IconRef?, colour: IconColour?, fallbackTint: Color,
-                onPick: @escaping (IconRef?) -> Void,
+    public init(title: String, chosen: IconChoice?, colour: IconColour?, fallbackTint: Color,
+                onPick: @escaping (IconChoice?) -> Void,
                 onColour: @escaping (IconColour?) -> Void,
                 onCancel: (() -> Void)? = nil) {
         self.title = title
@@ -183,7 +183,7 @@ public struct IconPicker: View {
         )
     }
 
-    private func iconCard(_ ref: IconRef) -> some View {
+    private func iconCard(_ ref: IconChoice) -> some View {
         ChoiceCard(
             title: IconLibrary.label(for: ref) ?? ref.name,
             isOn: chosen == ref,
@@ -219,7 +219,7 @@ public struct IconPicker: View {
 
     // MARK: - What a press does
 
-    private func pick(_ ref: IconRef?) {
+    private func pick(_ ref: IconChoice?) {
         onPick(ref)
         dismiss()
     }
@@ -242,7 +242,7 @@ public struct IconPicker: View {
 /// one is ringed. The swatches stand edge to edge, so each one's whole share of the row takes the
 /// press (46 points on a 402-point iPhone).
 private struct ColourSwatches: View {
-    let chosen: IconRef?
+    let chosen: IconChoice?
     let colour: IconColour?
     let fallbackTint: Color
     let letter: String

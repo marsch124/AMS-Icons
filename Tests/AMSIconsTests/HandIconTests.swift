@@ -45,7 +45,7 @@ final class HandIconTests: XCTestCase {
 
     /// Only the hand-drawn icons, so these tests mean the same once Apple's symbols are in the
     /// catalog too.
-    private static func isHand(_ ref: IconRef) -> Bool {
+    private static func isHand(_ ref: IconChoice) -> Bool {
         ref.kind == .hand
     }
 
@@ -77,7 +77,7 @@ final class HandIconTests: XCTestCase {
             // Small letters a to z only, so "hand:<key>" can never be misread or cut short.
             XCTAssertFalse(key.isEmpty, "an icon with no key")
             XCTAssertTrue(key.allSatisfy { $0.isASCII && $0.isLowercase }, "'\(key)' is not small letters a to z")
-            XCTAssertEqual(IconRef(stored: "hand:" + key), .hand(key), key)
+            XCTAssertEqual(IconChoice(stored: "hand:" + key), .hand(key), key)
         }
     }
 

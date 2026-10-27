@@ -130,7 +130,7 @@ final class SymbolCatalogTests: XCTestCase {
             XCTAssertTrue(IconLibrary.exists(symbol.ref), "'\(symbol.name)' is not found by the library.")
             XCTAssertEqual(IconLibrary.label(for: symbol.ref), symbol.label)
             XCTAssertEqual(IconLibrary.symbolIcon(symbol.name), symbol)
-            XCTAssertEqual(IconRef(stored: symbol.ref.stored), symbol.ref,
+            XCTAssertEqual(IconChoice(stored: symbol.ref.stored), symbol.ref,
                            "'\(symbol.name)' does not come back the same after it is stored.")
         }
     }

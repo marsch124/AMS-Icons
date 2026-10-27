@@ -14,7 +14,7 @@ import SwiftUI
 /// gives a letter.
 public struct IconTile: View {
     /// The icon on the tile. Nil shows the letter.
-    public let ref: IconRef?
+    public let ref: IconChoice?
     /// The tile's colour. Nil is Automatic: `fallbackTint`.
     public let colour: IconColour?
     /// What Automatic looks like: the app's own colour for this kind of thing.
@@ -24,7 +24,7 @@ public struct IconTile: View {
     /// The tile's width and height.
     public let size: CGFloat
 
-    public init(_ ref: IconRef?, colour: IconColour? = nil, fallbackTint: Color,
+    public init(_ ref: IconChoice?, colour: IconColour? = nil, fallbackTint: Color,
                 letter: String? = nil, size: CGFloat = 40) {
         self.ref = ref
         self.colour = colour

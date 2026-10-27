@@ -4,73 +4,73 @@ import XCTest
 /// A record an app might save, with an icon that may not have been chosen.
 private struct Saved: Codable, Equatable {
     var title: String
-    var icon: IconRef?
+    var icon: IconChoice?
 }
 
 /// What an app stores for an icon: one string, "hand:<key>" or "symbol:<name>".
-final class IconRefTests: XCTestCase {
+final class IconChoiceTests: XCTestCase {
     func testAHandDrawnIconRoundTrips() {
-        let ref = IconRef.hand("bike")
+        let ref = IconChoice.hand("bike")
         XCTAssertEqual(ref.kind, .hand)
         XCTAssertEqual(ref.name, "bike")
         XCTAssertEqual(ref.stored, "hand:bike")
-        XCTAssertEqual(IconRef(stored: ref.stored), ref)
+        XCTAssertEqual(IconChoice(stored: ref.stored), ref)
     }
 
     func testAnAppleSymbolRoundTrips() {
-        let ref = IconRef.symbol("figure.run")
+        let ref = IconChoice.symbol("figure.run")
         XCTAssertEqual(ref.kind, .symbol)
         XCTAssertEqual(ref.name, "figure.run")
         XCTAssertEqual(ref.stored, "symbol:figure.run")
-        XCTAssertEqual(IconRef(stored: "symbol:figure.run"), ref)
-        XCTAssertEqual(IconRef(kind: .symbol, name: "figure.run"), ref)
+        XCTAssertEqual(IconChoice(stored: "symbol:figure.run"), ref)
+        XCTAssertEqual(IconChoice(kind: .symbol, name: "figure.run"), ref)
     }
 
     func testSpacesAroundDoNotCount() {
-        XCTAssertEqual(IconRef(stored: "  hand:bike \n"), .hand("bike"))
-        XCTAssertEqual(IconRef(stored: "symbol: book "), .symbol("book"))
-        XCTAssertEqual(IconRef(kind: .hand, name: " bike "), .hand("bike"))
+        XCTAssertEqual(IconChoice(stored: "  hand:bike \n"), .hand("bike"))
+        XCTAssertEqual(IconChoice(stored: "symbol: book "), .symbol("book"))
+        XCTAssertEqual(IconChoice(kind: .hand, name: " bike "), .hand("bike"))
     }
 
     func testAnythingElseIsNotAnIcon() {
         let bad = ["", "   ", "bike", "figure.run", "hand:", "symbol:", "hand:   ", "symbol: \n",
                    "emoji:bike", "Hand:bike", "SYMBOL:book", ":bike", "hand", "symbol", "hand bike"]
         for text in bad {
-            XCTAssertNil(IconRef(stored: text), "'\(text)' was read as an icon")
+            XCTAssertNil(IconChoice(stored: text), "'\(text)' was read as an icon")
         }
     }
 
     func testItIsStoredAsOneString() throws {
-        let refs: [IconRef] = [.hand("bike"), .symbol("book")]
+        let refs: [IconChoice] = [.hand("bike"), .symbol("book")]
         let data = try JSONEncoder().encode(refs)
         XCTAssertEqual(String(data: data, encoding: .utf8), #"["hand:bike","symbol:book"]"#)
-        XCTAssertEqual(try JSONDecoder().decode([IconRef].self, from: data), refs)
+        XCTAssertEqual(try JSONDecoder().decode([IconChoice].self, from: data), refs)
     }
 
     func testABareWordCannotBeDecoded() {
         let data = Data(#"["bike"]"#.utf8)
-        XCTAssertThrowsError(try JSONDecoder().decode([IconRef].self, from: data))
+        XCTAssertThrowsError(try JSONDecoder().decode([IconChoice].self, from: data))
     }
 
     func testTheIdAndDescriptionAreTheStoredString() {
-        let ref = IconRef.symbol("leaf")
+        let ref = IconChoice.symbol("leaf")
         XCTAssertEqual(ref.id, "symbol:leaf")
         XCTAssertEqual(ref.description, "symbol:leaf")
-        XCTAssertEqual(IconRef.Kind.hand.prefix, "hand:")
-        XCTAssertEqual(IconRef.Kind.symbol.prefix, "symbol:")
+        XCTAssertEqual(IconChoice.Kind.hand.prefix, "hand:")
+        XCTAssertEqual(IconChoice.Kind.symbol.prefix, "symbol:")
     }
 
     func testAHandAndASymbolOfTheSameNameAreDifferent() {
-        XCTAssertNotEqual(IconRef.hand("book"), IconRef.symbol("book"))
-        XCTAssertEqual(Set([IconRef.hand("book"), .symbol("book"), .hand("book")]).count, 2)
+        XCTAssertNotEqual(IconChoice.hand("book"), IconChoice.symbol("book"))
+        XCTAssertEqual(Set([IconChoice.hand("book"), .symbol("book"), .hand("book")]).count, 2)
     }
 
     func testThePrefixAloneDecidesTheKind() {
         // "car" is a hand-drawn key and also the name of an Apple symbol: the prefix says which.
-        XCTAssertEqual(IconRef(stored: "hand:car")?.kind, .hand)
-        XCTAssertEqual(IconRef(stored: "symbol:car")?.kind, .symbol)
-        XCTAssertEqual(IconRef(stored: "symbol:car")?.name, "car")
-        XCTAssertNotEqual(IconRef(stored: "hand:car"), IconRef(stored: "symbol:car"))
+        XCTAssertEqual(IconChoice(stored: "hand:car")?.kind, .hand)
+        XCTAssertEqual(IconChoice(stored: "symbol:car")?.kind, .symbol)
+        XCTAssertEqual(IconChoice(stored: "symbol:car")?.name, "car")
+        XCTAssertNotEqual(IconChoice(stored: "hand:car"), IconChoice(stored: "symbol:car"))
     }
 
     func testEveryIconInThePackageIsStoredAndReadBackAsItself() throws {
@@ -78,13 +78,13 @@ final class IconRefTests: XCTestCase {
         XCTAssertEqual(refs.count, IconLibrary.hand.count + IconLibrary.symbols.count)
         XCTAssertEqual(Set(refs).count, refs.count, "two icons store the same string")
         for ref in refs {
-            XCTAssertEqual(IconRef(stored: ref.stored), ref, ref.stored)
+            XCTAssertEqual(IconChoice(stored: ref.stored), ref, ref.stored)
             XCTAssertTrue(ref.stored.hasPrefix(ref.kind.prefix), ref.stored)
             // No space inside a name, so a stored icon reads back the same from any settings line.
             XCTAssertFalse(ref.name.contains(where: { $0.isWhitespace }), "'\(ref.stored)' has a space in it")
         }
         let data = try JSONEncoder().encode(refs)
-        XCTAssertEqual(try JSONDecoder().decode([IconRef].self, from: data), refs)
+        XCTAssertEqual(try JSONDecoder().decode([IconChoice].self, from: data), refs)
     }
 
     func testAnIconInARecordIsOneStringAndMayBeLeftOut() throws {
@@ -106,7 +106,7 @@ final class IconRefTests: XCTestCase {
     func testAnIconThisCopyOfThePackageDoesNotKnowIsStillRead() {
         // A newer app may have stored an icon this copy of the package does not have yet. It is
         // read and kept, not thrown away; the package only says it is not in the catalog.
-        let ref = IconRef(stored: "hand:not-drawn-yet")
+        let ref = IconChoice(stored: "hand:not-drawn-yet")
         XCTAssertEqual(ref, .hand("not-drawn-yet"))
         XCTAssertEqual(ref?.stored, "hand:not-drawn-yet")
         XCTAssertFalse(IconLibrary.exists(.hand("not-drawn-yet")))

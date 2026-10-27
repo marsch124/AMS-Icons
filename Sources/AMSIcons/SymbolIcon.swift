@@ -2,7 +2,7 @@ import Foundation
 
 /// One of the chosen SF Symbols, Apple's own icons.
 ///
-/// Only the symbol's name is stored (as `symbol:<name>`, see `IconRef`); the system draws it.
+/// Only the symbol's name is stored (as `symbol:<name>`, see `IconChoice`); the system draws it.
 /// Apple's symbols may be used only in apps for Apple's own platforms. `words` are hidden words
 /// the search finds it by (English, and the Swedish he might type); they are never shown.
 public struct SymbolIcon: Identifiable, Hashable, Sendable {
@@ -24,7 +24,7 @@ public struct SymbolIcon: Identifiable, Hashable, Sendable {
     public var id: String { name }
 
     /// What to store for this icon.
-    public var ref: IconRef { .symbol(name) }
+    public var ref: IconChoice { .symbol(name) }
 }
 
 /// The headings Apple's symbols sit under, in the order the picker shows them.

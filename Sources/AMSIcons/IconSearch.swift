@@ -5,15 +5,15 @@ public struct IconSection: Identifiable, Hashable, Sendable {
     /// "hand.travel" or "symbol.work": stable, for `ForEach` and for test ids.
     public let id: String
     /// Which set the icons come from.
-    public let kind: IconRef.Kind
+    public let kind: IconChoice.Kind
     /// The whole heading: "Hand-drawn · Travel" or "Apple symbols · Work and projects".
     public let title: String
     /// The group's own title alone: "Travel" or "Work and projects".
     public let groupTitle: String
     /// The icons, in the catalog's order.
-    public let refs: [IconRef]
+    public let refs: [IconChoice]
 
-    public init(id: String, kind: IconRef.Kind, title: String, groupTitle: String, refs: [IconRef]) {
+    public init(id: String, kind: IconChoice.Kind, title: String, groupTitle: String, refs: [IconChoice]) {
         self.id = id
         self.kind = kind
         self.title = title
@@ -50,7 +50,7 @@ public enum IconLibrary {
     public static var symbols: [SymbolIcon] { SymbolCatalog.all }
 
     /// Every icon as what would be stored: the hand-drawn ones first, then Apple's.
-    public static var allRefs: [IconRef] {
+    public static var allRefs: [IconChoice] {
         HandIconCatalog.all.map(\.ref) + SymbolCatalog.all.map(\.ref)
     }
 
@@ -75,17 +75,17 @@ public enum IconLibrary {
     }
 
     /// The hand-drawn icon a ref points at, or nil (an Apple symbol, or an unknown key).
-    public static func handIcon(for ref: IconRef) -> HandIcon? {
+    public static func handIcon(for ref: IconChoice) -> HandIcon? {
         ref.kind == .hand ? handByKey[ref.name] : nil
     }
 
     /// The SF Symbol a ref points at, or nil (a hand-drawn icon, or a name not in the catalog).
-    public static func symbolIcon(for ref: IconRef) -> SymbolIcon? {
+    public static func symbolIcon(for ref: IconChoice) -> SymbolIcon? {
         ref.kind == .symbol ? symbolByName[ref.name] : nil
     }
 
     /// What the picker writes under this icon, or nil when it is not in the catalog.
-    public static func label(for ref: IconRef) -> String? {
+    public static func label(for ref: IconChoice) -> String? {
         switch ref.kind {
         case .hand: return handByKey[ref.name]?.label
         case .symbol: return symbolByName[ref.name]?.label
@@ -94,12 +94,12 @@ public enum IconLibrary {
 
     /// Is this icon in the package's catalog? (Whether this device's system can draw an Apple
     /// symbol is a different question, answered by the views.)
-    public static func exists(_ ref: IconRef) -> Bool {
+    public static func exists(_ ref: IconChoice) -> Bool {
         label(for: ref) != nil
     }
 
     /// The hidden words this icon is found by. Never shown.
-    public static func hiddenWords(for ref: IconRef) -> [String] {
+    public static func hiddenWords(for ref: IconChoice) -> [String] {
         switch ref.kind {
         case .hand: return HandIconKeywords.words[ref.name] ?? []
         case .symbol: return symbolByName[ref.name]?.words ?? []
@@ -107,7 +107,7 @@ public enum IconLibrary {
     }
 
     /// Does this icon answer the search? Every icon does for an empty search.
-    public static func matches(_ ref: IconRef, _ query: String) -> Bool {
+    public static func matches(_ ref: IconChoice, _ query: String) -> Bool {
         let needles = Needle.all(in: query)
         if needles.isEmpty { return true }
         return matches(texts(for: ref), needles)
@@ -122,11 +122,11 @@ public enum IconLibrary {
 
     /// The same, keeping only the icons `keep` says yes to (the picker uses it to leave out an
     /// Apple symbol this device's system cannot draw). A heading left empty is left out.
-    public static func search(_ query: String, keeping keep: (IconRef) -> Bool) -> [IconSection] {
+    public static func search(_ query: String, keeping keep: (IconChoice) -> Bool) -> [IconSection] {
         let needles = Needle.all(in: query)
         var sections: [IconSection] = []
         for group in HandIconGroup.allCases {
-            var refs: [IconRef] = []
+            var refs: [IconChoice] = []
             for icon in HandIconCatalog.all where icon.group == group {
                 let ref = icon.ref
                 guard keep(ref), matches(texts(of: icon), needles) else { continue }
@@ -142,7 +142,7 @@ public enum IconLibrary {
             ))
         }
         for group in SymbolGroup.allCases {
-            var refs: [IconRef] = []
+            var refs: [IconChoice] = []
             for symbol in SymbolCatalog.all where symbol.group == group {
                 let ref = symbol.ref
                 guard keep(ref), matches(texts(of: symbol), needles) else { continue }
@@ -218,7 +218,7 @@ public enum IconLibrary {
     }
 
     /// The same for any ref; an icon not in the catalog is found by its name alone.
-    static func texts(for ref: IconRef) -> [String] {
+    static func texts(for ref: IconChoice) -> [String] {
         switch ref.kind {
         case .hand:
             guard let icon = handByKey[ref.name] else { return [ref.name] }

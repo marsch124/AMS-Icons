@@ -20,7 +20,7 @@ import UIKit
 /// icon's label ("Bicycle"); a row that says the same in words can hide it.
 public struct IconMark: View {
     /// What to draw. Nil draws the "no icon" circle.
-    public let ref: IconRef?
+    public let ref: IconChoice?
     /// The width and height of the square it is drawn in.
     public let size: CGFloat
     /// Its colour. Nil takes the foreground style around it.
@@ -28,7 +28,7 @@ public struct IconMark: View {
     /// The hand-drawn stroke on the 24-point box. 1.9 is the Packing app's.
     public let lineWidth: CGFloat
 
-    public init(_ ref: IconRef?, size: CGFloat = 24, colour: Color? = nil, lineWidth: CGFloat = 1.9) {
+    public init(_ ref: IconChoice?, size: CGFloat = 24, colour: Color? = nil, lineWidth: CGFloat = 1.9) {
         self.ref = ref
         self.size = size
         self.colour = colour
@@ -98,7 +98,7 @@ extension IconLibrary {
     /// Apple symbol can when this device's system has a symbol of that name: an older iPhone or
     /// Mac may lack a newer symbol, and the picker leaves such a symbol out. The system is asked
     /// once per name; the answer is kept for as long as the app runs.
-    public static func canDraw(_ ref: IconRef) -> Bool {
+    public static func canDraw(_ ref: IconChoice) -> Bool {
         switch ref.kind {
         case .hand: return handIcon(ref.name) != nil
         case .symbol: return SystemSymbols.has(ref.name)

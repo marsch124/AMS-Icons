@@ -8,7 +8,10 @@ import Foundation
 ///
 /// A bare word with no prefix ("bike") is NOT read as an icon: what an older value means is for
 /// the app to decide, never guessed here. A hand-drawn key never changes once it has been stored.
-public struct IconRef: Hashable, Codable, Sendable, Identifiable, CustomStringConvertible {
+///
+/// The name is not `IconRef` on purpose: Apple's CoreServices already has a type called that, and
+/// on the Mac an app that imports both would find the name ambiguous.
+public struct IconChoice: Hashable, Codable, Sendable, Identifiable, CustomStringConvertible {
     /// Which of the two sets the icon comes from.
     public enum Kind: String, CaseIterable, Codable, Sendable {
         case hand
@@ -29,10 +32,10 @@ public struct IconRef: Hashable, Codable, Sendable, Identifiable, CustomStringCo
     }
 
     /// One of the hand-drawn icons, by its key.
-    public static func hand(_ key: String) -> IconRef { IconRef(kind: .hand, name: key) }
+    public static func hand(_ key: String) -> IconChoice { IconChoice(kind: .hand, name: key) }
 
     /// One of Apple's SF Symbols, by its system name.
-    public static func symbol(_ name: String) -> IconRef { IconRef(kind: .symbol, name: name) }
+    public static func symbol(_ name: String) -> IconChoice { IconChoice(kind: .symbol, name: name) }
 
     /// Reads a stored string. Spaces around it, and around the name, do not count. Nil for
     /// anything else: an empty string, a prefix with no name, an unknown prefix ("emoji:…",
@@ -57,7 +60,7 @@ public struct IconRef: Hashable, Codable, Sendable, Identifiable, CustomStringCo
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let text = try container.decode(String.self)
-        guard let ref = IconRef(stored: text) else {
+        guard let ref = IconChoice(stored: text) else {
             throw DecodingError.dataCorruptedError(
                 in: container,
                 debugDescription: "\"\(text)\" is not an icon. It must start with hand: or symbol:."

@@ -4,7 +4,7 @@ import Foundation
 ///
 /// Every drawing is one 1.9-point stroke on a 24-point box, with round caps and joins and no
 /// fill, using only the path commands M L H V C S Q A Z (`SVGPath`). `key` is what is stored
-/// (as `hand:<key>`, see `IconRef`) and never changes; `label` is what the picker writes under
+/// (as `hand:<key>`, see `IconChoice`) and never changes; `label` is what the picker writes under
 /// the icon and may change.
 public struct HandIcon: Identifiable, Hashable, Sendable {
     public let key: String
@@ -23,7 +23,7 @@ public struct HandIcon: Identifiable, Hashable, Sendable {
     public var id: String { key }
 
     /// What to store for this icon.
-    public var ref: IconRef { .hand(key) }
+    public var ref: IconChoice { .hand(key) }
 }
 
 /// The headings the hand-drawn icons sit under, in the order the picker shows them. The same
