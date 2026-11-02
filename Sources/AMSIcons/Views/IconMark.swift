@@ -80,7 +80,7 @@ struct IconPlaceholder: View {
 }
 
 /// A colour when one is given; else the view keeps the foreground style around it.
-private struct OptionalForeground: ViewModifier {
+struct OptionalForeground: ViewModifier {
     let colour: Color?
 
     @ViewBuilder

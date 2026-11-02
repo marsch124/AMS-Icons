@@ -113,6 +113,23 @@ IconTile(ref, colour: IconColour.of(key: "blue"), fallbackTint: .green, letter: 
 - With no icon, or an icon this device cannot draw, the tile shows the first letter of `letter`.
   It never shows an emoji.
 
+## Control marks
+
+The marks on buttons — Add, Edit, Start, Pause, Skip, Done, Close, a tick circle, Photo,
+Enlarge, More, Settings, List — drawn the hand-drawn way, so no AMS app needs a stock symbol on
+a button. They are not template icons: the picker and the search never show them, and they are
+never stored.
+
+```swift
+ControlMarkView(.check, size: 22, colour: .white)
+ControlMarkView(.close)                    // no colour: takes the colour around it
+```
+
+They are hidden from VoiceOver; the button they sit on says what it does. The list is
+`ControlMark.allCases`; a mark may be added, none renamed or taken away. A new one follows the
+rules of the hand-drawn icons and goes into `Sources/AMSIcons/ControlMarks.swift` and the list in
+`Tests/AMSIconsTests/ControlMarkTests.swift`.
+
 ## Choose an icon
 
 `IconPicker` is the whole choosing screen, as in the Packing app. Present it in a sheet.
@@ -327,6 +344,7 @@ Sources/AMSIcons/
   HandIcon.swift           a hand-drawn icon and its six headings
   HandIconCatalog.swift    the 132 drawings
   HandIconKeywords.swift   their hidden words
+  ControlMarks.swift       the marks on buttons (not in the picker)
   SymbolIcon.swift         an Apple symbol and its sixteen headings
   SymbolCatalog.swift      the chosen symbols
   IconColour.swift         the palette
