@@ -93,6 +93,8 @@ public enum HandIconKeywords {
         "strength": ["gym", "weights", "barbell", "lifting", "styrka", "styrketräning", "vikter", "krafttraining",
                      "fitnessstudio", "hantel"],
         "kettlebell": ["weight", "gym", "vikt", "kugelhantel"],
+        "gym": ["fitness", "workout", "training", "gym", "gymmet", "fitnessstudio"],
+        "pushup": ["push-up", "press-up", "armhävning", "liegestütz", "floor"],
         "mobility": ["rörlighet", "mobilität", "beweglichkeit"],
         "yoga": ["stretching", "warm-up", "stretcha", "töjning", "dehnen", "dehnung"],
         "lotus": ["meditation", "mindfulness", "meditera", "achtsamkeit"],
