@@ -130,6 +130,23 @@ They are hidden from VoiceOver; the button they sit on says what it does. The li
 rules of the hand-drawn icons and goes into `Sources/AMSIcons/ControlMarks.swift` and the list in
 `Tests/AMSIconsTests/ControlMarkTests.swift`.
 
+## App marks
+
+The marks beside an app's places and on its toolbars — Inbox, Today, Calendar, Project, Area,
+Archive, Sync, Search, Cloud, Lock and 56 more (66 in all) — drawn the hand-drawn way, so that
+PARAGON's sidebar, toolbar and lists need no stock symbol. Like the control marks they are not
+template icons: the picker and the search never show them, and they are never stored.
+
+```swift
+AppMarkView(.inbox, size: 22, colour: .blue)
+AppMarkView(.sync)                        // no colour: takes the colour around it
+```
+
+They are hidden from VoiceOver; the row or button they sit on says what it is. The list is
+`AppMark.allCases`; a mark may be added, none renamed or taken away. A new one follows the rules
+of the hand-drawn icons and goes into `Sources/AMSIcons/AppMarks.swift` and the list in
+`Tests/AMSIconsTests/AppMarkTests.swift`.
+
 ## Choose an icon
 
 `IconPicker` is the whole choosing screen, as in the Packing app. Present it in a sheet.
