@@ -128,7 +128,9 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .readOff: return "M3 12c2.4-4.3 5.6-6.5 9-6.5s6.6 2.2 9 6.5c-2.4 4.3-5.6 6.5-9 6.5S5.4 16.3 3 12Z M9 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0 M4.5 19.5 19.5 4.5"
         case .back: return "M14.5 5.5 8 12l6.5 6.5"
         case .forward: return "M9.5 5.5 16 12l-6.5 6.5"
-        case .archiveDown: return "M12 3.5v8 M8.8 8.3 12 11.5l3.2-3.2 M3.5 14.5h17v6h-17Z"
+        // The archive box with a small arrow going into it (12 Nov 2026: an arrow into a plain
+        // tray read as Inbox in the blind test).
+        case .archiveDown: return "M12 2.8v5.2 M9.6 5.6 12 8l2.4-2.4 M3.5 10.5h17v3.5h-17Z M5 14v6.5h14V14 M10 17.2h4"
         case .moon: return "M8 4.5A8.5 8.5 0 1 0 19.5 16A8.5 8.5 0 0 1 8 4.5Z"
         case .sunrise: return "M3 17h18 M7.5 17a4.5 4.5 0 0 1 9 0 M12 10.5V8 M7.4 12.4 5.6 10.6 M16.6 12.4l1.8-1.8"
         case .cup: return "M5 7h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5Z M16 9.5h1.5a2.5 2.5 0 0 1 0 5H16 M3.5 20.5h15"
