@@ -38,6 +38,7 @@ public struct IconPicker: View {
     private let onPick: (IconChoice?) -> Void
     private let onColour: (IconColour?) -> Void
     private let onCancel: (() -> Void)?
+    private let appleSymbols: Bool
 
     @Environment(\.dismiss) private var dismiss
     /// What is typed in **Find an icon**.
@@ -53,10 +54,13 @@ public struct IconPicker: View {
     ///   - onPick: Called with the icon pressed, or nil for **No icon**.
     ///   - onColour: Called with the colour pressed, or nil for **Automatic**.
     ///   - onCancel: Called when **Cancel** or Escape is pressed.
+    ///   - appleSymbols: `false` offers the hand-drawn icons only (PARAGON, 12 Nov 2026). An
+    ///     Apple symbol chosen earlier is still drawn; it is only no longer offered.
     public init(title: String, chosen: IconChoice?, colour: IconColour?, fallbackTint: Color,
                 onPick: @escaping (IconChoice?) -> Void,
                 onColour: @escaping (IconColour?) -> Void,
-                onCancel: (() -> Void)? = nil) {
+                onCancel: (() -> Void)? = nil,
+                appleSymbols: Bool = true) {
         self.title = title
         self.chosen = chosen
         self.colour = colour
@@ -64,10 +68,14 @@ public struct IconPicker: View {
         self.onPick = onPick
         self.onColour = onColour
         self.onCancel = onCancel
+        self.appleSymbols = appleSymbols
     }
 
     public var body: some View {
-        let sections = IconLibrary.search(query, keeping: IconLibrary.canDraw)
+        let offersSymbols = appleSymbols
+        let sections = IconLibrary.search(query, keeping: { ref in
+            (offersSymbols || ref.kind == .hand) && IconLibrary.canDraw(ref)
+        })
         VStack(spacing: 0) {
             header
             ScrollView {
@@ -154,7 +162,7 @@ public struct IconPicker: View {
                 Button {
                     query = ""
                 } label: {
-                    Image(systemName: "xmark.circle.fill")
+                    ControlMarkView(.closeCircle, size: 18)
                         .foregroundStyle(.secondary)
                         .frame(width: 28, height: 28)
                         .contentShape(Rectangle())

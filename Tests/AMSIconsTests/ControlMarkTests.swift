@@ -7,6 +7,7 @@ final class ControlMarkTests: XCTestCase {
         XCTAssertEqual(ControlMark.allCases.map(\.rawValue), [
             "add", "addCircle", "edit", "play", "pause", "skip", "check", "close",
             "circle", "ticked", "photo", "expand", "chevron", "more", "settings", "list",
+            "minusCircle", "closeCircle",
         ])
     }
 

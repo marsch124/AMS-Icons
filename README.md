@@ -133,7 +133,7 @@ rules of the hand-drawn icons and goes into `Sources/AMSIcons/ControlMarks.swift
 ## App marks
 
 The marks beside an app's places and on its toolbars — Inbox, Today, Calendar, Project, Area,
-Archive, Sync, Search, Cloud, Lock and 56 more (66 in all) — drawn the hand-drawn way, so that
+Archive, Sync, Search, Cloud, Lock and 59 more (69 in all) — drawn the hand-drawn way, so that
 PARAGON's sidebar, toolbar and lists need no stock symbol. Like the control marks they are not
 template icons: the picker and the search never show them, and they are never stored.
 

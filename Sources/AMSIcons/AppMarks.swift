@@ -17,6 +17,7 @@ public enum AppMark: String, CaseIterable, Sendable {
     case ringDashed, compose, bookmark, listIndent, info, hand, palette, ruler, `repeat`, question
     case clockAlert, openLink, openApp, send, arrowDownLeft, arrowDown, share, parcel, minus, zoomIn
     case zoomOut, filter, undo, trayFull, dot, lock
+    case folder, person, clock
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -87,6 +88,9 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .trayFull: return "Tray"
         case .dot: return "Dot"
         case .lock: return "Locked"
+        case .folder: return "Folder"
+        case .person: return "Person"
+        case .clock: return "Clock"
         }
     }
 
@@ -95,14 +99,18 @@ public enum AppMark: String, CaseIterable, Sendable {
         switch self {
         // A tray: an open box seen from the front, with the slot as its lip.
         case .inbox: return "M3.5 13v5a1.5 1.5 0 0 0 1.5 1.5h14a1.5 1.5 0 0 0 1.5-1.5v-5 M3.5 13h4.5l1.6 2.5h4.8l1.6-2.5h4.5 M6 13l1.9-6.5h8.2L18 13"
-        case .today: return "M8.5 12a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0 M12 3.5v2 M12 18.5v2 M3.5 12h2 M18.5 12h2 M6 6l1.4 1.4 M16.6 16.6 18 18 M18 6l-1.4 1.4 M7.4 16.6 6 18"
+        // The same sun as the hand-drawn "sun" (12 Nov 2026): one sun in the family, not two.
+        case .today: return "M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0 M12 2.8v2.4 M12 18.8v2.4 M2.8 12h2.4 M18.8 12h2.4 M5.5 5.5l1.7 1.7 M16.8 16.8l1.7 1.7 M5.5 18.5l1.7-1.7 M16.8 7.2l1.7-1.7"
         case .calendar: return "M3.5 6.5h17v13h-17Z M3.5 10.5h17 M8 4v4.5 M16 4v4.5"
-        case .timeBlocks: return "M20.5 12V6.5h-17v13H11 M3.5 10.5h17 M8 4v4.5 M16 4v4.5 M13 16.5a4 4 0 1 0 8 0a4 4 0 1 0 -8 0 M17 14.3v2.2l1.4 1"
-        case .review: return "M4.2 7.3l1.6 1.6 2.8-3.2 M11 7.5h9 M11 12.5h9 M11 17.5h9"
+        // The day as an upright line with two blocks on it (12 Nov 2026: the calendar with a tiny clock read as Calendar).
+        case .timeBlocks: return "M5 3.5v17 M9 5h10.5v5H9Z M9 13.5h7v5.5H9Z"
+        // Round arrows with a tick: something to come back to and tick off (12 Nov 2026: tick + lines read as Snippets).
+        case .review: return "M4.5 9.3A8 8 0 0 1 19.5 9.3 M20.9 6.4 19.5 9.3 16.6 8 M19.5 14.7A8 8 0 0 1 4.5 14.7 M3.1 17.6 4.5 14.7 7.4 16 M9 12.2l2.2 2.2 3.8-4.3"
         case .map: return "M9.5 6a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M3.5 18a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M15.5 18a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M10.5 9 7.5 15 M13.5 9l3 6"
         case .recent: return "M6.5 15.75A7.5 7.5 0 1 0 6.5 8.25 M9.4 7.5 6.5 8.25 5.7 5.3 M13 8v4.5l3 1.8"
         case .bin: return "M4.5 7h15 M9.5 7V5h5v2 M6 7l1 13.5h10L18 7 M10 11v6 M14 11v6"
-        case .templates: return "M14 3.5H6v17h5 M14 3.5l5 5v2.5 M14 3.5v5h5 M20.2 17.7L21.2 18.6L20.4 20L19.1 19.6L18.4 20L18.1 21.3L16.5 21.3L16.2 20L15.5 19.6L14.2 20L13.4 18.6L14.4 17.7L14.4 16.9L13.4 16L14.2 14.6L15.5 15L16.2 14.6L16.5 13.3L18.1 13.3L18.4 14.6L19.1 15L20.4 14.6L21.2 16L20.2 16.9Z"
+        // Two pages, one behind the other: a page to copy (12 Nov 2026: the corner gear melted at list size).
+        case .templates: return "M9 7.5h6.5l4 4V20.5H9Z M15.5 7.5v4h4 M6 16.5V3.5h7.5"
         case .snippets: return "M4 7h16 M4 12h16 M4 17h8 M16.5 14.5v5 M14 17h5"
         case .tags: return "M9.5 4.5 7.5 19.5 M16.5 4.5l-2 15 M4.5 9.5h15.5 M4 15h15.5"
         case .search: return "M4.5 10.5a6 6 0 1 0 12 0a6 6 0 1 0 -12 0 M15 15l5 5"
@@ -140,7 +148,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .listIndent: return "M4.5 6h15 M4.5 10h15 M9.5 14h10 M9.5 18h10"
         case .info: return "M4 12a8 8 0 1 0 16 0a8 8 0 1 0 -16 0 M12 11v5.5 M12 8h.01"
         case .hand: return "M5 20.5 3.5 15.5V10A1.6 1.6 0 0 1 6.7 10L7 13.6 7.3 6.3A1.6 1.6 0 0 1 10.5 6.3L10.8 12.5 11.1 5.2A1.6 1.6 0 0 1 14.3 5.2L14.6 12.9 14.9 6.7A1.6 1.6 0 0 1 18.1 6.7V13C18.6 11.8 20.3 10.2 21.3 11C22.3 11.9 20.9 14.3 19.2 16L18.3 17.2V20.5Z"
-        case .palette: return "M20.4 13.5A8.5 8.5 0 1 0 14.9 20A4.6 4.6 0 0 1 20.4 13.5Z M7.5 9.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M11 6.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M14.5 8.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M6.5 14a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        // The four colours are points of the line (12 Nov 2026: small rings filled in).
+        case .palette: return "M20.4 13.5A8.5 8.5 0 1 0 14.9 20A4.6 4.6 0 0 1 20.4 13.5Z M8.5 10.5h.01 M12 7.5h.01 M15.5 9.5h.01 M7.5 14.8h.01"
         case .ruler: return "M3.4 17.4 17.4 3.4l3.2 3.2L6.6 20.6Z M10.8 16.4l-1.4-1.4 M13.6 13.6l-1.9-1.9 M16.4 10.8l-1.4-1.4"
         case .`repeat`: return "M16.5 3l3.5 3.5-3.5 3.5 M20 6.5H7.5a4 4 0 0 0-4 4V12 M7.5 21 4 17.5l3.5-3.5 M4 17.5h12.5a4 4 0 0 0 4-4V12"
         case .question: return "M4 12a8 8 0 1 0 16 0a8 8 0 1 0 -16 0 M9.6 9.6A2.4 2.4 0 1 1 12 12v1.8 M12 16.8h.01"
@@ -151,7 +160,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .arrowDownLeft: return "M18.5 5.5 5.5 18.5 M5.5 9.5v9h9"
         case .arrowDown: return "M12 4v16 M5.5 13.5 12 20l6.5-6.5"
         case .share: return "M8 10H6a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 18 10h-2 M12 15V3.5 M8.5 7 12 3.5 15.5 7"
-        case .parcel: return "M12 3.5 4 7.5v9l8 4 8-4v-9Z M4 7.5l8 4 8-4 M12 11.5v9 M8 5.5l8 4"
+        // The same box as the hand-drawn "box" (12 Nov 2026).
+        case .parcel: return "M3.5 7.8 12 3.8l8.5 4v8.9L12 20.7l-8.5-4Z M3.5 7.8 12 11.8l8.5-4 M12 11.8v8.9 M7.8 5.8l8.4 4"
         case .minus: return "M5 12h14"
         case .zoomIn: return "M4.5 10.5a6 6 0 1 0 12 0a6 6 0 1 0 -12 0 M15 15l5 5 M10.5 8v5 M8 10.5h5"
         case .zoomOut: return "M4.5 10.5a6 6 0 1 0 12 0a6 6 0 1 0 -12 0 M15 15l5 5 M8 10.5h5"
@@ -160,6 +170,11 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .trayFull: return "M3.5 13v5a1.5 1.5 0 0 0 1.5 1.5h14a1.5 1.5 0 0 0 1.5-1.5v-5 M3.5 13h4.5l1.6 2.5h4.8l1.6-2.5h4.5 M8 4.5h8 M8 8.5h8"
         case .dot: return "M9 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"
         case .lock: return "M5.5 10.5h13v10h-13Z M8 10.5V7.5a4 4 0 0 1 8 0v3 M12 14.5v2.5"
+        case .folder: return "M3.5 7a1.5 1.5 0 0 1 1.5-1.5h4.3l2.2 2.5H19a1.5 1.5 0 0 1 1.5 1.5v8.5a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5Z"
+        // A head and shoulders in a ring.
+        case .person: return "M4 12a8 8 0 1 0 16 0a8 8 0 1 0 -16 0 M9.6 10a2.4 2.4 0 1 0 4.8 0a2.4 2.4 0 1 0 -4.8 0 M7 18.2a5.3 5.3 0 0 1 10 0"
+        // A plain clock face; the timer keeps its button on top.
+        case .clock: return "M3.5 12a8.5 8.5 0 1 0 17 0a8.5 8.5 0 1 0 -17 0 M12 7v5l3.5 2"
         }
     }
 }
