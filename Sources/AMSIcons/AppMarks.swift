@@ -182,7 +182,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .clock: return "M3.5 12a8.5 8.5 0 1 0 17 0a8.5 8.5 0 1 0 -17 0 M12 7v5l3.5 2"
         // A closed drawer and the same drawer pulled out — first drawn for AMS Tidy Bar (13 Nov 2026).
         case .drawer: return "M6.5 7h11a2.5 2.5 0 0 1 2.5 2.5v5a2.5 2.5 0 0 1-2.5 2.5h-11a2.5 2.5 0 0 1-2.5-2.5v-5a2.5 2.5 0 0 1 2.5-2.5Z M10 12h4"
-        case .drawerOpen: return "M6.5 4.5h11a2.5 2.5 0 0 1 2.5 2.5v2a2.5 2.5 0 0 1-2.5 2.5h-11a2.5 2.5 0 0 1-2.5-2.5v-2a2.5 2.5 0 0 1 2.5-2.5Z M5.5 11.5 4 19.5h16l-1.5-8 M10 15.5h4"
+        case .drawerOpen: return "M5.2 10.5h9.6a2.2 2.2 0 0 1 2.2 2.2v4.6a2.2 2.2 0 0 1-2.2 2.2H5.2A2.2 2.2 0 0 1 3 17.3v-4.6a2.2 2.2 0 0 1 2.2-2.2Z M8 15h4 M5 10.5 9 4.5h12v8L17 17"
         }
     }
 }
