@@ -18,6 +18,7 @@ public enum AppMark: String, CaseIterable, Sendable {
     case clockAlert, openLink, openApp, send, arrowDownLeft, arrowDown, share, parcel, minus, zoomIn
     case zoomOut, filter, undo, trayFull, dot, lock
     case folder, person, clock
+    case drawer, drawerOpen
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -91,6 +92,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .folder: return "Folder"
         case .person: return "Person"
         case .clock: return "Clock"
+        case .drawer: return "Drawer"
+        case .drawerOpen: return "Open drawer"
         }
     }
 
@@ -177,6 +180,9 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .person: return "M4 12a8 8 0 1 0 16 0a8 8 0 1 0 -16 0 M9.6 10a2.4 2.4 0 1 0 4.8 0a2.4 2.4 0 1 0 -4.8 0 M7 18.2a5.3 5.3 0 0 1 10 0"
         // A plain clock face; the timer keeps its button on top.
         case .clock: return "M3.5 12a8.5 8.5 0 1 0 17 0a8.5 8.5 0 1 0 -17 0 M12 7v5l3.5 2"
+        // A closed drawer and the same drawer pulled out — first drawn for AMS Tidy Bar (13 Nov 2026).
+        case .drawer: return "M6.5 7h11a2.5 2.5 0 0 1 2.5 2.5v5a2.5 2.5 0 0 1-2.5 2.5h-11a2.5 2.5 0 0 1-2.5-2.5v-5a2.5 2.5 0 0 1 2.5-2.5Z M10 12h4"
+        case .drawerOpen: return "M6.5 4.5h11a2.5 2.5 0 0 1 2.5 2.5v2a2.5 2.5 0 0 1-2.5 2.5h-11a2.5 2.5 0 0 1-2.5-2.5v-2a2.5 2.5 0 0 1 2.5-2.5Z M5.5 11.5 4 19.5h16l-1.5-8 M10 15.5h4"
         }
     }
 }
