@@ -19,6 +19,11 @@ public enum AppMark: String, CaseIterable, Sendable {
     case zoomOut, filter, undo, trayFull, dot, lock
     case folder, person, clock
     case drawer, drawerOpen
+    // AMS Deck Mate (16 Nov 2026)
+    case deckRaycast, deckKeyboard, deckText, deckPlay, deckNext, deckPrevious
+    case deckVolumeUp, deckVolumeDown, deckMute, deckFolder, deckBack, deckPageNext
+    case deckPagePrevious, deckProfile, deckMulti, deckScript, deckClipboard, deckWindowLeft
+    case deckWindowRight, deckWindowFull, deckAi, deckApp
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -94,6 +99,28 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .clock: return "Clock"
         case .drawer: return "Drawer"
         case .drawerOpen: return "Open drawer"
+        case .deckRaycast: return "Raycast"
+        case .deckKeyboard: return "Keyboard shortcut"
+        case .deckText: return "Type text"
+        case .deckPlay: return "Play pause"
+        case .deckNext: return "Next track"
+        case .deckPrevious: return "Previous track"
+        case .deckVolumeUp: return "Volume up"
+        case .deckVolumeDown: return "Volume down"
+        case .deckMute: return "Mute sound"
+        case .deckFolder: return "Key folder"
+        case .deckBack: return "Back"
+        case .deckPageNext: return "Next page"
+        case .deckPagePrevious: return "Previous page"
+        case .deckProfile: return "Profile"
+        case .deckMulti: return "Several"
+        case .deckScript: return "Script"
+        case .deckClipboard: return "Clipboard"
+        case .deckWindowLeft: return "Window left"
+        case .deckWindowRight: return "Window right"
+        case .deckWindowFull: return "Window full"
+        case .deckAi: return "AI"
+        case .deckApp: return "App"
         }
     }
 
@@ -183,6 +210,29 @@ public enum AppMark: String, CaseIterable, Sendable {
         // A closed drawer and the same drawer pulled out — first drawn for AMS Tidy Bar (13 Nov 2026).
         case .drawer: return "M6.5 7h11a2.5 2.5 0 0 1 2.5 2.5v5a2.5 2.5 0 0 1-2.5 2.5h-11a2.5 2.5 0 0 1-2.5-2.5v-5a2.5 2.5 0 0 1 2.5-2.5Z M10 12h4"
         case .drawerOpen: return "M5.2 10.5h9.6a2.2 2.2 0 0 1 2.2 2.2v4.6a2.2 2.2 0 0 1-2.2 2.2H5.2A2.2 2.2 0 0 1 3 17.3v-4.6a2.2 2.2 0 0 1 2.2-2.2Z M8 15h4 M5 10.5 9 4.5h12v8L17 17"
+        // The 22 marks drawn for AMS Deck Mate (16 Nov 2026).
+        case .deckRaycast: return "M4.5 19.5 19.5 4.5 M4.5 12 12 4.5 M12 19.5 19.5 12"
+        case .deckKeyboard: return "M4.5 6.5h15a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-8a1.5 1.5 0 0 1 1.5-1.5z M7 10.2h.01 M10.3 10.2h.01 M13.7 10.2h.01 M17 10.2h.01 M8.5 14h7"
+        case .deckText: return "M4.5 18 9 6l4.5 12 M6.2 14h5.6 M16.5 10.5h3 M16.5 14.2h3 M16.5 18h3"
+        case .deckPlay: return "M5.5 6.5v11l8-5.5z M16.5 7v10 M19.5 7v10"
+        case .deckNext: return "M5.5 6.5v11l8.5-5.5z M18 6.5v11"
+        case .deckPrevious: return "M18.5 6.5v11l-8.5-5.5z M6 6.5v11"
+        case .deckVolumeUp: return "M4 9.8h3.2l4.3-3.6v11.6l-4.3-3.6H4z M15 9.5a3.6 3.6 0 0 1 0 5 M17.6 7a7.2 7.2 0 0 1 0 10"
+        case .deckVolumeDown: return "M4 9.8h3.2l4.3-3.6v11.6l-4.3-3.6H4z M15 9.5a3.6 3.6 0 0 1 0 5"
+        case .deckMute: return "M4 9.8h3.2l4.3-3.6v11.6l-4.3-3.6H4z M15.5 9.5l5 5 M20.5 9.5l-5 5"
+        case .deckFolder: return "M3.5 7.5a1.5 1.5 0 0 1 1.5-1.5h4l2 2.2h8a1.5 1.5 0 0 1 1.5 1.5v7.8a1.5 1.5 0 0 1 -1.5 1.5h-14a1.5 1.5 0 0 1 -1.5-1.5z M8.5 13.6h.01 M12 13.6h.01 M15.5 13.6h.01"
+        case .deckBack: return "M9 14.5 4.5 10 9 5.5 M4.5 10h10a5 5 0 0 1 0 10h-3"
+        case .deckPageNext: return "M4.5 12h.01 M8.5 12h.01 M13 6.5l5.5 5.5-5.5 5.5"
+        case .deckPagePrevious: return "M19.5 12h-.01 M15.5 12h-.01 M11 6.5 5.5 12l5.5 5.5"
+        case .deckProfile: return "M12 4.5 20 9l-8 4.5L4 9z M4.5 12.8 12 17l7.5-4.2 M4.5 16.3 12 20.5l7.5-4.2"
+        case .deckMulti: return "M4.5 6h5v4h-5z M14.5 14h5v4h-5z M9.5 8h4a1.5 1.5 0 0 1 1.5 1.5v2"
+        case .deckScript: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M7 9.5l3 2.5-3 2.5 M12.5 14.8h4.5"
+        case .deckClipboard: return "M8.5 5.5h-2a1.5 1.5 0 0 0 -1.5 1.5v12a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5v-12a1.5 1.5 0 0 0 -1.5-1.5h-2 M9 4h6v3.2h-6z M8.5 12h7 M8.5 15.8h4.5"
+        case .deckWindowLeft: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M12 5.5v13 M5.8 9h3.4 M5.8 12h3.4 M5.8 15h3.4"
+        case .deckWindowRight: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M12 5.5v13 M14.8 9h3.4 M14.8 12h3.4 M14.8 15h3.4"
+        case .deckWindowFull: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M6.5 12V9.5H9 M17.5 12v2.5H15"
+        case .deckAi: return "M11 4.5c.6 3.8 2.2 5.4 6 6-3.8.6-5.4 2.2-6 6-.6-3.8-2.2-5.4-6-6 3.8-.6 5.4-2.2 6-6z M18 15.5v4 M16 17.5h4"
+        case .deckApp: return "M6.5 4.5h11a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2-2v-11a2 2 0 0 1 2-2z M9 9h.01 M15 9h.01 M9 15h.01 M15 15h.01"
         }
     }
 }
