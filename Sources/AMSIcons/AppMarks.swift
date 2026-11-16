@@ -24,6 +24,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case deckVolumeUp, deckVolumeDown, deckMute, deckFolder, deckBack, deckPageNext
     case deckPagePrevious, deckProfile, deckMulti, deckScript, deckClipboard, deckWindowLeft
     case deckWindowRight, deckWindowFull, deckAi, deckApp
+    // AMS Snug GridFit (16 Nov 2026)
+    case gridFlat, gridEdge, gridStanding, gridAuto, gridBin, gridBins, gridStrip, gridPrintFile
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -121,6 +123,14 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .deckWindowFull: return "Window full"
         case .deckAi: return "AI"
         case .deckApp: return "App"
+        case .gridFlat: return "Flat"
+        case .gridEdge: return "Edge"
+        case .gridStanding: return "Standing"
+        case .gridAuto: return "Auto"
+        case .gridBin: return "Cutout bin"
+        case .gridBins: return "My bins"
+        case .gridStrip: return "Strip"
+        case .gridPrintFile: return "Print file"
         }
     }
 
@@ -233,6 +243,14 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .deckWindowFull: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M6.5 12V9.5H9 M17.5 12v2.5H15"
         case .deckAi: return "M11 4.5c.6 3.8 2.2 5.4 6 6-3.8.6-5.4 2.2-6 6-.6-3.8-2.2-5.4-6-6 3.8-.6 5.4-2.2 6-6z M18 15.5v4 M16 17.5h4"
         case .deckApp: return "M6.5 4.5h11a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2-2v-11a2 2 0 0 1 2-2z M9 9h.01 M15 9h.01 M9 15h.01 M15 15h.01"
+        case .gridFlat: return "M3.5 12.5h17v5h-17Z M2.5 20.5h19"
+        case .gridEdge: return "M6 8.5h12v9H6Z M2.5 20.5h19"
+        case .gridStanding: return "M8.5 3.5h7v14h-7Z M2.5 20.5h19"
+        case .gridAuto: return "M3.5 3.5h17v17h-17Z M8 16.5l4-9 4 9 M9.6 13.2h4.8"
+        case .gridBin: return "M6 5h12a2.5 2.5 0 0 1 2.5 2.5v9A2.5 2.5 0 0 1 18 19H6a2.5 2.5 0 0 1-2.5-2.5v-9A2.5 2.5 0 0 1 6 5Z M9.5 9h5A1.5 1.5 0 0 1 16 10.5v3A1.5 1.5 0 0 1 14.5 15h-5A1.5 1.5 0 0 1 8 13.5v-3A1.5 1.5 0 0 1 9.5 9Z"
+        case .gridBins: return "M5 4h3a1.5 1.5 0 0 1 1.5 1.5v3A1.5 1.5 0 0 1 8 10H5A1.5 1.5 0 0 1 3.5 8.5v-3A1.5 1.5 0 0 1 5 4Z M13 5.5h7.5 M13 8.5h5 M5 14h3a1.5 1.5 0 0 1 1.5 1.5v3A1.5 1.5 0 0 1 8 20H5a1.5 1.5 0 0 1-1.5-1.5v-3A1.5 1.5 0 0 1 5 14Z M13 15.5h7.5 M13 18.5h5"
+        case .gridStrip: return "M5 8h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z M7.5 11v2 M12 10.5v3 M16.5 10v4"
+        case .gridPrintFile: return "M13.5 3.5H7A1.5 1.5 0 0 0 5.5 5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8.5Z M13.5 3.5v5h5 M12 11.5v5.5 M9.5 14.5L12 17l2.5-2.5"
         }
     }
 }
