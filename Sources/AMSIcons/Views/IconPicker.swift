@@ -137,7 +137,7 @@ public struct IconPicker: View {
             } label: {
                 Text("Cancel")
             }
-            .buttonStyle(OutlinedCapsuleButtonStyle())
+            .buttonStyle(OutlinedCapsuleButtonStyle(tint: fallbackTint))
             .focusEffectDisabled()
             .keyboardShortcut(.cancelAction)
             .accessibilityIdentifier("icon.cancel")
@@ -504,17 +504,19 @@ enum PickerLook {
 }
 
 /// **Cancel**: an outlined capsule in grey, as the Packing app draws it.
+/// Cancel in the app's own colour (was grey): words, outline and a soft fill.
 private struct OutlinedCapsuleButtonStyle: ButtonStyle {
+    let tint: Color
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(.body, weight: .semibold))
-            .foregroundStyle(Color.secondary)
+            .foregroundStyle(tint)
             .lineLimit(1)
             .fixedSize()
             .padding(.horizontal, 12)
             .frame(minHeight: PickerLook.headerButtonHeight)
-            .background(Capsule().fill(Color.secondary.opacity(0.10)))
-            .overlay(Capsule().stroke(Color.secondary, lineWidth: 1.4))
+            .background(Capsule().fill(tint.opacity(0.12)))
+            .overlay(Capsule().stroke(tint, lineWidth: 1.4))
             .contentShape(Capsule())
             .opacity(configuration.isPressed ? 0.7 : 1)
     }
