@@ -6,7 +6,7 @@ It holds two kinds of icon, one way to store a choice, one search, one set of co
 SwiftUI views: one that draws an icon, one that draws it on a coloured tile, and one that lets a
 person choose.
 
-- **Hand-drawn icons.** 134 line drawings, first made for the AMS Packing app. Bike, Tent, Plane,
+- **Hand-drawn icons.** 140 line drawings, first made for the AMS Packing app. Bike, Tent, Plane,
   Coffee, and so on. They are stored in this package as path data, so they look the same on
   every device.
 - **Apple symbols.** About 300 chosen SF Symbols, for the things the hand-drawn set does not

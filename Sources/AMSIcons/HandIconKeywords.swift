@@ -188,6 +188,8 @@ public enum HandIconKeywords {
         "plug": ["charger", "cable", "plug", "adapter", "power", "laddare", "kabel", "elektronik", "ladegerät",
                  "stecker"],
         "headphones": ["earphones", "airpods", "audio", "hörlurar", "kopfhörer"],
+        "microphone": ["mic", "recording", "voice", "podcast", "audio", "mikrofon", "röst", "inspelning", "aufnahme"],
+        "microphoneoff": ["mute", "muted", "mic off", "silent", "no sound", "mikrofon av", "stum", "stumm", "ljud av"],
         "wallet": ["wallet", "cash", "cards", "plånbok", "pengar", "kontanter", "geldbörse", "geld",
                    "portemonnaie"],
         "keys": ["key", "house", "home", "nycklar", "nyckel", "schlüssel"],

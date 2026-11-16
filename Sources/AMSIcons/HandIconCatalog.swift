@@ -162,6 +162,8 @@ public enum HandIconCatalog {
         i("notebook", "Notes", .everyday, "M6 3.5h11.5c.6 0 1 .4 1 1v15c0 .6-.4 1-1 1H6Z M4.5 7h3 M4.5 12h3 M4.5 17h3 M10 8h5.5 M10 12h5.5"),
         i("suit", "Suit", .everyday, "M8 3l1.5 5 2-2 M16 3l-1.5 5-2-2 M10.8 5.5h2.4l-.5 2.2h-1.4Z M11.3 7.7 10 17l2 2.5 2-2.5-1.3-9.3"),
         i("pram", "Pram", .everyday, "M3.5 11h13c0 2.8-2.5 5-5.5 5h-2c-3 0-5.5-2.2-5.5-5Z M3.5 11a6.5 6.5 0 0 1 6.5-6.5V11 M16.5 11 18.5 6.5h2 M5 20a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0 M12.4 20a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0"),
+        i("microphone", "Microphone", .everyday, "M12 3.5a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3Z M6 11.5a6 6 0 0 0 12 0 M12 17.5v3 M9 20.5h6"),
+        i("microphoneoff", "Microphone off", .everyday, "M12 3.5a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3Z M6 11.5a6 6 0 0 0 12 0 M12 17.5v3 M9 20.5h6 M5 4.5 19 20"),
         i("keycap", "Keyboard key", .everyday, "M7 4.5h10a3.5 3.5 0 0 1 3.5 3.5v8a3.5 3.5 0 0 1-3.5 3.5H7A3.5 3.5 0 0 1 3.5 16V8A3.5 3.5 0 0 1 7 4.5Z M9 8h6a2 2 0 0 1 2 2v2.5a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z"),
         i("edit", "Edit", .everyday, "M5 15.5l.8-3.4 7.4-7.4a1.8 1.8 0 0 1 2.6 2.6l-7.4 7.4Z M11.6 6.3l2.6 2.6 M4 20.5h16"),
         i("printer", "Printer", .everyday, "M7 9V4h10v5 M5.5 9h13a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z M7 14.5h10V20H7Z M17 12h.5"),
