@@ -191,6 +191,7 @@ public enum HandIconKeywords {
         "wallet": ["wallet", "cash", "cards", "plånbok", "pengar", "kontanter", "geldbörse", "geld",
                    "portemonnaie"],
         "keys": ["key", "house", "home", "nycklar", "nyckel", "schlüssel"],
+        "keycap": ["key", "keyboard", "shortcut", "keycap", "tangent", "tangentbord", "taste", "tastatur"],
         "clothes": ["clothing", "shirt", "t-shirt", "kläder", "tröja", "kleidung", "hemd"],
         "shoes": ["sneakers", "boots", "footwear", "skor", "kängor", "schuhe", "stiefel"],
         "laundry": ["washing", "washing machine", "tvätt", "tvätta", "tvättmaskin", "wäsche", "waschen",
