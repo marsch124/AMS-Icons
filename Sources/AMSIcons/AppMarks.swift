@@ -26,6 +26,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case deckWindowRight, deckWindowFull, deckAi, deckApp
     // AMS Snug GridFit (16 Nov 2026)
     case gridFlat, gridEdge, gridStanding, gridAuto, gridBin, gridBins, gridStrip, gridPrintFile
+    // Arrows for every direction and the two missing window halves (AMS Deck Mate, 16 Nov 2026)
+    case arrowUp, arrowLeft, arrowRight, deckWindowTop, deckWindowBottom
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -131,6 +133,11 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .gridBins: return "My bins"
         case .gridStrip: return "Strip"
         case .gridPrintFile: return "Print file"
+        case .arrowUp: return "Up"
+        case .arrowLeft: return "Left"
+        case .arrowRight: return "Right"
+        case .deckWindowTop: return "Window top"
+        case .deckWindowBottom: return "Window bottom"
         }
     }
 
@@ -251,6 +258,13 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .gridBins: return "M5 4h3a1.5 1.5 0 0 1 1.5 1.5v3A1.5 1.5 0 0 1 8 10H5A1.5 1.5 0 0 1 3.5 8.5v-3A1.5 1.5 0 0 1 5 4Z M13 5.5h7.5 M13 8.5h5 M5 14h3a1.5 1.5 0 0 1 1.5 1.5v3A1.5 1.5 0 0 1 8 20H5a1.5 1.5 0 0 1-1.5-1.5v-3A1.5 1.5 0 0 1 5 14Z M13 15.5h7.5 M13 18.5h5"
         case .gridStrip: return "M5 8h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z M7.5 11v2 M12 10.5v3 M16.5 10v4"
         case .gridPrintFile: return "M13.5 3.5H7A1.5 1.5 0 0 0 5.5 5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8.5Z M13.5 3.5v5h5 M12 11.5v5.5 M9.5 14.5L12 17l2.5-2.5"
+        // The same shafts and heads as "Down", turned.
+        case .arrowUp: return "M12 20V4 M5.5 10.5 12 4l6.5 6.5"
+        case .arrowLeft: return "M20 12H4 M10.5 5.5 4 12l6.5 6.5"
+        case .arrowRight: return "M4 12h16 M13.5 5.5 20 12l-6.5 6.5"
+        // The window of "Window left" and "Window right", split across: one line marks the half meant.
+        case .deckWindowTop: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M3 12h18 M6.5 8.75h11"
+        case .deckWindowBottom: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M3 12h18 M6.5 15.25h11"
         }
     }
 }

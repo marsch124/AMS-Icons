@@ -16,8 +16,9 @@ final class AppMarkTests: XCTestCase {
             "drawer", "drawerOpen",
             "deckRaycast", "deckKeyboard", "deckText", "deckPlay", "deckNext", "deckPrevious", "deckVolumeUp", "deckVolumeDown", "deckMute", "deckFolder", "deckBack", "deckPageNext", "deckPagePrevious", "deckProfile", "deckMulti", "deckScript", "deckClipboard", "deckWindowLeft", "deckWindowRight", "deckWindowFull", "deckAi", "deckApp",
             "gridFlat", "gridEdge", "gridStanding", "gridAuto", "gridBin", "gridBins", "gridStrip", "gridPrintFile",
+            "arrowUp", "arrowLeft", "arrowRight", "deckWindowTop", "deckWindowBottom",
         ])
-        XCTAssertEqual(AppMark.allCases.count, 101)
+        XCTAssertEqual(AppMark.allCases.count, 106)
     }
 
     func testEveryMarkKeepsTheHandDrawnRules() {

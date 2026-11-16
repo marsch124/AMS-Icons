@@ -222,5 +222,6 @@ public enum HandIconKeywords {
         "suit": ["tie", "necktie", "formal", "dress code", "business attire", "kostym", "slips", "finkläder",
                  "anzug", "krawatte"],
         "pram": ["stroller", "pushchair", "buggy", "baby", "barnvagn", "sittvagn", "kinderwagen"],
+        "home": ["house", "start", "start page", "main page", "hem", "hus", "startsida", "zuhause", "haus", "startseite"],
     ]
 }
