@@ -30,6 +30,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case arrowUp, arrowLeft, arrowRight, deckWindowTop, deckWindowBottom
     // AMS Reading Companion (17 Nov 2026)
     case lockOpen
+    // A star for a rating: drawn as an outline, the app fills it for a given star (AMS Reading Companion, 17 Nov 2026)
+    case star
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -101,6 +103,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .dot: return "Dot"
         case .lock: return "Locked"
         case .lockOpen: return "Lock-free"
+        case .star: return "Star"
         case .folder: return "Folder"
         case .person: return "Person"
         case .clock: return "Clock"
@@ -224,6 +227,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .lock: return "M5.5 10.5h13v10h-13Z M8 10.5V7.5a4 4 0 0 1 8 0v3 M12 14.5v2.5"
         // The lock with its shackle swung open: it rises from the left post and ends free in the air (AMS Reading Companion, 17 Nov 2026).
         case .lockOpen: return "M5.5 10.5h13v10h-13Z M8 10.5V7a4 4 0 0 1 7.6-1.7 M12 14.5v2.5"
+        case .star: return "M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.7l-5.1 2.7 1-5.6-4.1-4 5.7-.8Z"
         case .folder: return "M3.5 7a1.5 1.5 0 0 1 1.5-1.5h4.3l2.2 2.5H19a1.5 1.5 0 0 1 1.5 1.5v8.5a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5Z"
         // A head and shoulders in a ring.
         case .person: return "M4 12a8 8 0 1 0 16 0a8 8 0 1 0 -16 0 M9.6 10a2.4 2.4 0 1 0 4.8 0a2.4 2.4 0 1 0 -4.8 0 M7 18.2a5.3 5.3 0 0 1 10 0"
