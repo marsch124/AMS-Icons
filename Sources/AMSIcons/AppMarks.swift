@@ -36,6 +36,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case seedMindMap, seedBox, seedRound, seedDiamond, seedOval, seedArrow, seedNote, seedText
     case seedFrame, seedBoard, seedSprout, seedPin, seedFit, seedStarter
     case redo, duplicate
+    // AMS Deck Mate (18 Nov 2026): eject a disk, join a video meeting
+    case deckEject, deckVideo
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -148,6 +150,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .arrowRight: return "Right"
         case .deckWindowTop: return "Window top"
         case .deckWindowBottom: return "Window bottom"
+        case .deckEject: return "Eject"
+        case .deckVideo: return "Video meeting"
         case .seedMindMap: return "Mind map"
         case .seedBox: return "Box"
         case .seedRound: return "Round box"
@@ -294,6 +298,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         // The window of "Window left" and "Window right", split across: one line marks the half meant.
         case .deckWindowTop: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M3 12h18 M6.5 8.75h11"
         case .deckWindowBottom: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M3 12h18 M6.5 15.25h11"
+        case .deckEject: return "M12 5l7.5 9h-15z M4.5 18.5h15"
+        case .deckVideo: return "M5 6.5h8a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2-2v-7a2 2 0 0 1 2-2z M15 10.5l5.5-3v9l-5.5-3"
         case .seedMindMap: return "M4.25 12a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M9.25 12H19.75 M9.25 11C11.75 8 12.75 6.5 15.75 6.5H19.75 M9.25 13C11.75 16 12.75 17.5 15.75 17.5H19.75"
         case .seedBox: return "M6.5 6.5h11a2.5 2.5 0 0 1 2.5 2.5v6a2.5 2.5 0 0 1 -2.5 2.5h-11a2.5 2.5 0 0 1 -2.5-2.5v-6a2.5 2.5 0 0 1 2.5-2.5z"
         case .seedRound: return "M8.5 7h7a5 5 0 0 1 0 10h-7a5 5 0 0 1 0-10z"
