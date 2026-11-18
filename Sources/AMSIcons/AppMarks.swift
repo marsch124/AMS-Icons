@@ -50,6 +50,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case seedBringBack, seedEarlier, seedExport, seedSearch, seedCut, seedPaste, seedRename
     // AMS Seedboard 0.2, second round (18 Nov 2026)
     case seedHome, seedCopy, seedSelectAll, seedLineElbow, seedLineStraight, seedLineCurved, seedSection, seedNoteBand, seedPhase, seedComesAfter
+    // Seedboard 0.3
+    case seedPicture, seedSaveStarter
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -227,6 +229,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedNoteBand: return "Note band"
         case .seedPhase: return "Phase"
         case .seedComesAfter: return "Comes after"
+        case .seedPicture: return "Picture"
+        case .seedSaveStarter: return "Save as starter"
         }
     }
 
@@ -471,6 +475,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedPhase: return "M4 3.8h8v1.2H4Z M4 11V9.5h16V11 M4 14.5h8 M12 19h8"
         // One short bar upper left, one lower right, a small elbow arrow from the end of the first to the start of the second.
         case .seedComesAfter: return "M4 4.8h4.5v1.2H4Z M16.5 17.6h3.5v1.2h-3.5Z M8.5 5.4H10.5V18.2H14.6 M12.8 16.4L14.6 18.2L12.8 20"
+        case .seedPicture: return "M6 5h12a2.5 2.5 0 0 1 2.5 2.5v9a2.5 2.5 0 0 1 -2.5 2.5h-12a2.5 2.5 0 0 1 -2.5-2.5v-9a2.5 2.5 0 0 1 2.5-2.5z M15.1 8.75a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0 M3.5 16.5L8.5 11L12 14.5L14.5 13L20.5 16.5"
+        case .seedSaveStarter: return "M11.5 6.5H5.75A1.75 1.75 0 0 0 4 8.25v10A1.75 1.75 0 0 0 5.75 20h7.5A1.75 1.75 0 0 0 15 18.25V10Z M11.5 6.5v3.5h3.5 M19 3.75v4.5 M16.75 6h4.5"
         }
     }
 }
