@@ -482,7 +482,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedPicture: return "M6 5h12a2.5 2.5 0 0 1 2.5 2.5v9a2.5 2.5 0 0 1 -2.5 2.5h-12a2.5 2.5 0 0 1 -2.5-2.5v-9a2.5 2.5 0 0 1 2.5-2.5z M15.1 8.75a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0 M3.5 16.5L8.5 11L12 14.5L14.5 13L20.5 16.5"
         case .seedSaveStarter: return "M11.5 6.5H5.75A1.75 1.75 0 0 0 4 8.25v10A1.75 1.75 0 0 0 5.75 20h7.5A1.75 1.75 0 0 0 15 18.25V10Z M11.5 6.5v3.5h3.5 M19 3.75v4.5 M16.75 6h4.5"
         case .seedCrop: return "M7 3.5V17H20.5 M17 20.5V7H3.5"
-        case .seedCaption: return "M5.5 3h13a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-13a2 2 0 0 1 -2-2v-8a2 2 0 0 1 2-2z M7.5 10.5L10.5 7.5L12.5 9.5L14 8L16.5 10.5 M8 20H16"
+        case .seedCaption: return "M5.5 3.5h13a2 2 0 0 1 2 2v5.5a2 2 0 0 1 -2 2h-13a2 2 0 0 1 -2-2v-5.5a2 2 0 0 1 2-2z M7.5 10.5L10.5 7.5L12.5 9.5L14 8L16.5 10.5 M4.5 17H19.5 M4.5 20.5H13"
         }
     }
 }
