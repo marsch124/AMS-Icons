@@ -38,6 +38,16 @@ public enum AppMark: String, CaseIterable, Sendable {
     case redo, duplicate
     // AMS Deck Mate (18 Nov 2026): eject a disk, join a video meeting
     case deckEject, deckVideo
+    // AMS Seedboard 0.2 (18 Nov 2026): the timeline, drawing, sequence and flowchart boards, lining up,
+    // line ends, moving ideas in the mind map, and the board's own tools.
+    case seedTimeline, seedBar, seedMilestone, seedToday, seedCalendar
+    case seedDraw, seedRubber, seedThin, seedMedium, seedThick
+    case seedSequence, seedPerson, seedAnswer
+    case seedDocument, seedSlanted, seedStore, seedLanes
+    case seedLineUp, seedEvenGaps, seedSameSize
+    case seedOneWay, seedBothWays, seedNoEnds, seedDashed
+    case seedMoveUp, seedMoveDown, seedOutLevel, seedIdeaUnder, seedNextIdea, seedBranch
+    case seedBringBack, seedEarlier, seedExport, seedSearch, seedCut, seedPaste, seedRename
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -168,6 +178,43 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedStarter: return "Starter"
         case .redo: return "Redo"
         case .duplicate: return "Duplicate"
+        case .seedTimeline: return "Timeline"
+        case .seedBar: return "Bar"
+        case .seedMilestone: return "Milestone"
+        case .seedToday: return "Today line"
+        case .seedCalendar: return "Calendar"
+        case .seedDraw: return "Draw"
+        case .seedRubber: return "Rubber"
+        case .seedThin: return "Thin line"
+        case .seedMedium: return "Medium line"
+        case .seedThick: return "Thick line"
+        case .seedSequence: return "Sequence"
+        case .seedPerson: return "Person"
+        case .seedAnswer: return "Answer"
+        case .seedDocument: return "Document"
+        case .seedSlanted: return "Slanted box"
+        case .seedStore: return "Store"
+        case .seedLanes: return "Lanes"
+        case .seedLineUp: return "Line up"
+        case .seedEvenGaps: return "Even gaps"
+        case .seedSameSize: return "Same size"
+        case .seedOneWay: return "One way"
+        case .seedBothWays: return "Both ways"
+        case .seedNoEnds: return "No ends"
+        case .seedDashed: return "Dashed line"
+        case .seedMoveUp: return "Move up"
+        case .seedMoveDown: return "Move down"
+        case .seedOutLevel: return "Out level"
+        case .seedIdeaUnder: return "Idea under"
+        case .seedNextIdea: return "Next idea"
+        case .seedBranch: return "Branch"
+        case .seedBringBack: return "Bring back"
+        case .seedEarlier: return "Earlier"
+        case .seedExport: return "Export"
+        case .seedSearch: return "Search"
+        case .seedCut: return "Cut"
+        case .seedPaste: return "Paste"
+        case .seedRename: return "Rename"
         }
     }
 
@@ -316,6 +363,82 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedStarter: return "M13.5 3.5H7A1.5 1.5 0 0 0 5.5 5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8.5Z M13.5 3.5v5h5 M12 11.5v5.5 M9.25 14.25h5.5"
         case .redo: return "M19.5 9.5h-9a5.5 5.5 0 0 0 0 11H15 M16 6l3.5 3.5L16 13"
         case .duplicate: return "M9 15H6a2 2 0 0 1 -2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3.5 M11 9.5h7a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2-2v-7a2 2 0 0 1 2-2z"
+        // The 37 marks drawn for AMS Seedboard 0.2 (18 Nov 2026). A dashed line is drawn dash by dash,
+        // and a thicker line as two or three lines side by side: the stroke itself stays 1.9.
+        // Three bars of a plan, each starting later than the one above.
+        case .seedTimeline: return "M4 4.2h8.5v3.4H4Z M7.5 10.3h10v3.4h-10Z M13 16.4h7v3.4h-7Z"
+        // One bar of the timeline with a grip at each end.
+        case .seedBar: return "M7 8.5h10v7H7Z M3.9 12h.01 M20.1 12h.01"
+        // A small diamond on the line of time.
+        case .seedMilestone: return "M4 12h3.5 M16.5 12H20 M12 7.5L16.5 12L12 16.5L7.5 12Z"
+        // The line of today: upright with a small flag on top, crossing the line of time.
+        case .seedToday: return "M10.5 4.5V20 M10.5 4.5L18 7.25L10.5 10 M4.5 16h15"
+        // A calendar sheet with two rings and a row of days.
+        case .seedCalendar: return "M5 6h14a1.5 1.5 0 0 1 1.5 1.5v10.5a1.5 1.5 0 0 1 -1.5 1.5h-14a1.5 1.5 0 0 1 -1.5-1.5v-10.5a1.5 1.5 0 0 1 1.5-1.5z M8 4v4 M16 4v4 M8 13.5h.01 M12 13.5h.01 M16 13.5h.01"
+        // A pencil and the curly line it has just drawn.
+        case .seedDraw: return "M9 15l.8-3.3L17.7 3.8a1.6 1.6 0 0 1 2.3 2.3L12.1 14.1Z M9 15C6.5 15.6 4.4 16.6 4.4 18.2C4.4 19.8 6.6 19.8 7.8 18.6C9 17.4 10.4 17.4 11.2 18.6C11.9 19.6 13.2 19.8 14.5 19.2"
+        // A rubber leaning on the line it rubs out.
+        case .seedRubber: return "M14.5 4.5L19.5 9.5L9.5 19.5L4.5 14.5Z M8 11L13 16 M9.5 19.5H19.5"
+        // One wavy line.
+        case .seedThin: return "M4 12C6.7 8.5 9.3 8.5 12 12S17.3 15.5 20 12"
+        // Two wavy lines.
+        case .seedMedium: return "M4 10.2C6.7 6.7 9.3 6.7 12 10.2S17.3 13.7 20 10.2 M4 13.8C6.7 10.3 9.3 10.3 12 13.8S17.3 17.3 20 13.8"
+        // Three wavy lines.
+        case .seedThick: return "M4 8.5C6.7 5 9.3 5 12 8.5S17.3 12 20 8.5 M4 12C6.7 8.5 9.3 8.5 12 12S17.3 15.5 20 12 M4 15.5C6.7 12 9.3 12 12 15.5S17.3 19 20 15.5"
+        // Two lifelines, a message across and the answer back.
+        case .seedSequence: return "M4.5 4v16 M19.5 4v16 M4.5 8.5h15 M16.5 6l3 2.5-3 2.5 M19.5 15.5h-15 M7.5 13l-3 2.5 3 2.5"
+        // A head and shoulders, without the ring of the general Person mark.
+        case .seedPerson: return "M8.8 7.7a3.2 3.2 0 1 0 6.4 0a3.2 3.2 0 1 0 -6.4 0 M5 19.5c0-3.6 3-6 7-6s7 2.4 7 6"
+        // A dashed arrow coming back to the left.
+        case .seedAnswer: return "M20 12h-2.5 M14.25 12h-2.5 M8.5 12H4 M8 8L4 12l4 4"
+        // A sheet with a wavy lower edge.
+        case .seedDocument: return "M4.5 5.5h15v12c-2.5-1.8-5-1.8-7.5 0s-5 1.8-7.5 0Z"
+        // A box leaning to the right.
+        case .seedSlanted: return "M8.5 6.5h12l-5 11h-12z"
+        // A drum: where things are kept.
+        case .seedStore: return "M5 7a7 2.8 0 1 0 14 0a7 2.8 0 1 0 -14 0 M5 7v10a7 2.8 0 0 0 14 0V7"
+        // A frame split into three rows.
+        case .seedLanes: return "M5.5 4.5h13a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2h-13a2 2 0 0 1 -2-2v-11a2 2 0 0 1 2-2z M3.5 9.5h17 M3.5 14.5h17"
+        // Two boxes of different width, centred on one upright line.
+        case .seedLineUp: return "M12 4v2.5 M12 10.5v3 M12 17.5V20 M5.5 6.5h13v4h-13Z M8.5 13.5h7v4h-7Z"
+        // Three boxes in a row with the same gap between them, over a bracket.
+        case .seedEvenGaps: return "M4 5.5h3v6H4Z M10.5 5.5h3v6h-3Z M17 5.5h3v6h-3Z M4 15.5v3.5h16v-3.5"
+        // Two boxes of one size under an equals sign.
+        case .seedSameSize: return "M4 11h6.5v8.5H4Z M13.5 11H20v8.5h-6.5Z M9.5 4.5h5 M9.5 7.8h5"
+        // A line with a head at the right.
+        case .seedOneWay: return "M4 12h16 M16 8l4 4-4 4"
+        // A line with a head at each end.
+        case .seedBothWays: return "M4 12h16 M8 8L4 12l4 4 M16 8l4 4-4 4"
+        // A plain line between two small rings.
+        case .seedNoEnds: return "M3.7 12a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0 M16.7 12a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0 M7.3 12h9.4"
+        // A line of three dashes with a head at the right.
+        case .seedDashed: return "M4 12h2.5 M9.75 12h2.5 M15.5 12H20 M16 8l4 4-4 4"
+        // A branch and an arrow up beside it.
+        case .seedMoveUp: return "M4 12h7 M16 19.5v-15 M12 8.5l4-4 4 4"
+        // A branch and an arrow down beside it.
+        case .seedMoveDown: return "M4 12h7 M16 4.5v15 M12 15.5l4 4 4-4"
+        // A branch under its parent, and an arrow taking it out to the left.
+        case .seedOutLevel: return "M4 7h8 M14.5 16H20 M10.5 16H4 M7.5 12.5L4 16l3.5 3.5"
+        // An idea, a branch going right and down, and a plus for the new idea under it.
+        case .seedIdeaUnder: return "M6.5 4.5h2a2.5 2.5 0 0 1 0 5h-2a2.5 2.5 0 0 1 0-5z M11 7h2.5a3 3 0 0 1 3 3v1 M13.75 16.5h5.5 M16.5 13.75v5.5"
+        // An idea, a branch straight down, and a plus for the next idea.
+        case .seedNextIdea: return "M9 4h6a2.5 2.5 0 0 1 0 5H9a2.5 2.5 0 0 1 0-5z M12 9v2.5 M9.25 17h5.5 M12 14.25v5.5"
+        // One node and a single fork of two lines.
+        case .seedBranch: return "M4.5 12a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M9.5 12h3 M19.5 6.5H17C14 6.5 12.5 9 12.5 12C12.5 15 14 17.5 17 17.5H19.5"
+        // A board with a round arrow turning back inside it.
+        case .seedBringBack: return "M6.5 4.5h11a3 3 0 0 1 3 3v9a3 3 0 0 1 -3 3h-11a3 3 0 0 1 -3-3v-9a3 3 0 0 1 3-3z M8.8 14A4 4 0 1 0 8.8 10 M11.3 9.6 8.8 10 8 7.6"
+        // A whole clock face with an arrow turning back round it.
+        case .seedEarlier: return "M9.2 13.9a5 5 0 1 0 10 0a5 5 0 1 0 -10 0 M14.2 11.2v2.7l1.9 1.2 M16.5 5.2A9 9 0 0 0 5.5 11.6 M4.4 9.2 5.5 11.6 7.6 10.1"
+        // A box open at the top and an arrow going up and out.
+        case .seedExport: return "M4.5 12.5v5.5a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5v-5.5 M12 15V4 M8 8l4-4 4 4"
+        // A magnifier.
+        case .seedSearch: return "M4.5 10.25a5.75 5.75 0 1 0 11.5 0a5.75 5.75 0 1 0 -11.5 0 M14.4 14.4L19.5 19.5"
+        // Scissors, open.
+        case .seedCut: return "M4 7.5a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M4 16.5a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M8.5 9L19.5 17 M8.5 15L19.5 7"
+        // A clipboard with a sheet in front of it.
+        case .seedPaste: return "M8.5 5.5h-2a1.5 1.5 0 0 0 -1.5 1.5v11.5a1.5 1.5 0 0 0 1.5 1.5h2.5 M15.5 5.5h2a1.5 1.5 0 0 1 1.5 1.5v2.5 M9 4h6v3.2h-6z M11.5 12h8v8.5h-8z"
+        // A text cursor beside a short line of text.
+        case .seedRename: return "M14 4.5c1.5 0 2.5.8 2.5 2v11c0 1.2-1 2-2.5 2 M19 4.5c-1.5 0-2.5.8-2.5 2 M19 19.5c-1.5 0-2.5-.8-2.5-2 M4.5 12h7.5"
         }
     }
 }
