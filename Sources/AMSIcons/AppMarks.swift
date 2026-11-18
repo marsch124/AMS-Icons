@@ -48,6 +48,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case seedOneWay, seedBothWays, seedNoEnds, seedDashed
     case seedMoveUp, seedMoveDown, seedOutLevel, seedIdeaUnder, seedNextIdea, seedBranch
     case seedBringBack, seedEarlier, seedExport, seedSearch, seedCut, seedPaste, seedRename
+    // AMS Seedboard 0.2, second round (18 Nov 2026)
+    case seedHome, seedCopy, seedSelectAll, seedLineElbow, seedLineStraight, seedLineCurved, seedSection, seedNoteBand, seedPhase, seedComesAfter
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -215,6 +217,16 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedCut: return "Cut"
         case .seedPaste: return "Paste"
         case .seedRename: return "Rename"
+        case .seedHome: return "Home"
+        case .seedCopy: return "Copy"
+        case .seedSelectAll: return "Select all"
+        case .seedLineElbow: return "Elbow line"
+        case .seedLineStraight: return "Straight line"
+        case .seedLineCurved: return "Curved line"
+        case .seedSection: return "Section"
+        case .seedNoteBand: return "Note band"
+        case .seedPhase: return "Phase"
+        case .seedComesAfter: return "Comes after"
         }
     }
 
@@ -439,6 +451,26 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedPaste: return "M8.5 5.5h-2a1.5 1.5 0 0 0 -1.5 1.5v11.5a1.5 1.5 0 0 0 1.5 1.5h2.5 M15.5 5.5h2a1.5 1.5 0 0 1 1.5 1.5v2.5 M9 4h6v3.2h-6z M11.5 12h8v8.5h-8z"
         // A text cursor beside a short line of text.
         case .seedRename: return "M14 4.5c1.5 0 2.5.8 2.5 2v11c0 1.2-1 2-2.5 2 M19 4.5c-1.5 0-2.5.8-2.5 2 M19 19.5c-1.5 0-2.5-.8-2.5-2 M4.5 12h7.5"
+        // A small house: roof, body and a door.
+        case .seedHome: return "M3.5 11.5L12 4L20.5 11.5 M6 9.5V18.5A1 1 0 0 0 7 19.5H17A1 1 0 0 0 18 18.5V9.5 M10 19.5V15H14V19.5"
+        // One sheet in front of another, with two lines of text on the front one.
+        case .seedCopy: return "M6 8.5h8a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1 -1.5 1.5H6A1.5 1.5 0 0 1 4.5 18v-8A1.5 1.5 0 0 1 6 8.5z M8.5 8.5V5A1.5 1.5 0 0 1 10 3.5h8A1.5 1.5 0 0 1 19.5 5v8a1.5 1.5 0 0 1 -1.5 1.5h-2.5 M7.5 13h5 M7.5 16h3"
+        // A dashed box (corners and a short dash in each side) with a tick inside.
+        case .seedSelectAll: return "M4 8.5V6a2 2 0 0 1 2-2h2.5 M15.5 4H18a2 2 0 0 1 2 2v2.5 M20 15.5V18a2 2 0 0 1 -2 2h-2.5 M8.5 20H6a2 2 0 0 1 -2-2v-2.5 M11 4h2 M11 20h2 M4 11.2v1.6 M20 11.2v1.6 M8.5 12.3L11 14.8L15.5 9.5"
+        // A line with right angles, out, down, along, between two small dots.
+        case .seedLineElbow: return "M4.5 6H12V18H19.5 M3.7 6a0.8 0.8 0 1 0 1.6 0a0.8 0.8 0 1 0 -1.6 0 M18.7 18a0.8 0.8 0 1 0 1.6 0a0.8 0.8 0 1 0 -1.6 0"
+        // A straight slanted line between two small dots.
+        case .seedLineStraight: return "M4.5 18.5L19.5 5.5 M3.7 18.5a0.8 0.8 0 1 0 1.6 0a0.8 0.8 0 1 0 -1.6 0 M18.7 5.5a0.8 0.8 0 1 0 1.6 0a0.8 0.8 0 1 0 -1.6 0"
+        // A smooth S-curve between two small dots.
+        case .seedLineCurved: return "M4.5 18C12 18 12 6 19.5 6 M3.7 18a0.8 0.8 0 1 0 1.6 0a0.8 0.8 0 1 0 -1.6 0 M18.7 6a0.8 0.8 0 1 0 1.6 0a0.8 0.8 0 1 0 -1.6 0"
+        // A short heading bar sitting on a long thin level line.
+        case .seedSection: return "M4 4.8h9v1.2H4Z M4 16h16"
+        // Two short upright dashed lines with a soft level band across them.
+        case .seedNoteBand: return "M8 3.5v2.5 M8 18v2.5 M16 3.5v2.5 M16 18v2.5 M5.5 9.5h13a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1 -1.5 1.5h-13A1.5 1.5 0 0 1 4 13v-2A1.5 1.5 0 0 1 5.5 9.5z"
+        // A timeline heading row: a thick label on the left, a bracket spanning two short bars under it.
+        case .seedPhase: return "M4 3.8h8v1.2H4Z M4 11V9.5h16V11 M4 14.5h8 M12 19h8"
+        // One short bar upper left, one lower right, a small elbow arrow from the end of the first to the start of the second.
+        case .seedComesAfter: return "M4 4.8h4.5v1.2H4Z M16.5 17.6h3.5v1.2h-3.5Z M8.5 5.4H10.5V18.2H14.6 M12.8 16.4L14.6 18.2L12.8 20"
         }
     }
 }
