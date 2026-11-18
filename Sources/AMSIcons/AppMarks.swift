@@ -58,6 +58,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     // the timeline's Done and Catch up, and the Share page.
     case seedDoor, seedNextNote, seedNextShape, seedTurnInto, seedTidy, seedByColour, seedBreakNotes
     case seedDone, seedCatchUp, seedShare, seedPDF, seedWords, seedPrint, seedCamera, seedScan
+    // Seedboard 0.10 (19 Nov 2026): the buttons of 0.9 that borrowed a neighbour's mark or showed only words.
+    case seedBalance, seedHighlighter, seedLasso, seedMakeTyped, seedDrawOnIt, seedVote, seedTickList, seedLegend, seedFocus, seedShowFrames, seedSmallMap
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -254,6 +256,17 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedPrint: return "Print"
         case .seedCamera: return "Camera"
         case .seedScan: return "Scan"
+        case .seedBalance: return "Balance"
+        case .seedHighlighter: return "Highlighter"
+        case .seedLasso: return "Lasso"
+        case .seedMakeTyped: return "Make typed"
+        case .seedDrawOnIt: return "Draw on"
+        case .seedVote: return "Vote"
+        case .seedTickList: return "Tick list"
+        case .seedLegend: return "Legend"
+        case .seedFocus: return "Focus"
+        case .seedShowFrames: return "Show frames"
+        case .seedSmallMap: return "Small map"
         }
     }
 
@@ -533,6 +546,29 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedCamera: return "M3.5 8h4l1.5-2.5h6L16.5 8h4v11h-17Z M8.6 13.3a3.4 3.4 0 1 0 6.8 0a3.4 3.4 0 1 0 -6.8 0"
         // A page with the light bar across it: drawn above the bar, only its two lower corners below.
         case .seedScan: return "M6.5 12V3.5h7l4 4V12 M13.5 3.5v4h4 M3 12h18 M6.5 15.5v5h3.5 M14 20.5h3.5v-5"
+        // Seedboard 0.10 (19 Nov 2026).
+        // A middle idea with two branches to each side.
+        case .seedBalance: return "M9.7 12a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0 -4.6 0 M14.3 11C15.6 8.4 16.4 7 18 7H20 M14.3 13C15.6 15.6 16.4 17 18 17H20 M9.7 11C8.4 8.4 7.6 7 6 7H4 M9.7 13C8.4 15.6 7.6 17 6 17H4"
+        // A broad-tipped pen over the band it lays down.
+        case .seedHighlighter: return "M10.5 13.5L16.6 7.4a1.8 1.8 0 0 1 2.5 0l.5.5a1.8 1.8 0 0 1 0 2.5L13.5 16.5Z M10.5 13.5L8 17.5L9.5 19L13.5 16.5 M3.5 20.5H13"
+        // A loop of rope with its loose end hanging down.
+        case .seedLasso: return "M4 9.5a8 5 0 1 0 16 0a8 5 0 1 0 -16 0 M7.6 13.9C6.6 15.6 7.3 17.3 9 17.3C10.6 17.3 11 18.9 9.9 20.5"
+        // A handwritten squiggle turning into a typed letter T.
+        case .seedMakeTyped: return "M3.5 13C4.5 9.5 5.6 9.5 6.1 12S7.7 14.5 8.6 11 M10 12h3 M11.5 10.3L13.2 12L11.5 13.7 M14.5 6.5h6 M17.5 6.5V17.5"
+        // A picture with a pencil at its corner.
+        case .seedDrawOnIt: return "M11.5 15.5H5a1.5 1.5 0 0 1 -1.5-1.5V6A1.5 1.5 0 0 1 5 4.5h10A1.5 1.5 0 0 1 16.5 6v4 M3.5 13.2L7.2 9.5L10.7 13 M12.8 8h.01 M13 20.5l.6-2.6l5.6-5.6a1.4 1.4 0 0 1 2 2l-5.6 5.6Z"
+        // A note with a vote dot (a ring with a dot) on its corner.
+        case .seedVote: return "M15 9.5V5.5A1.5 1.5 0 0 0 13.5 4h-8A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15h4 M13 16.5a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0 M16.5 16.5h.01"
+        // Two ticked lines.
+        case .seedTickList: return "M4 7.5l1.6 1.6l3.2-3.2 M11.5 7.5H20 M4 15.5l1.6 1.6l3.2-3.2 M11.5 15.5H20"
+        // A small card: two colour dots, each with its words.
+        case .seedLegend: return "M5 4.5h14a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2-2v-11a2 2 0 0 1 2-2z M6 9a1.25 1.25 0 1 0 2.5 0a1.25 1.25 0 1 0 -2.5 0 M11 9h6 M6 15a1.25 1.25 0 1 0 2.5 0a1.25 1.25 0 1 0 -2.5 0 M11 15h4.5"
+        // The corners of a frame round a ring with a dot.
+        case .seedFocus: return "M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8 M16 4H18.5A1.5 1.5 0 0 1 20 5.5V8 M20 16V18.5A1.5 1.5 0 0 1 18.5 20H16 M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16 M9 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0 M12 12h.01"
+        // The corners of a frame round a play triangle.
+        case .seedShowFrames: return "M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8 M16 4H18.5A1.5 1.5 0 0 1 20 5.5V8 M20 16V18.5A1.5 1.5 0 0 1 18.5 20H16 M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16 M10 8.5l5.5 3.5l-5.5 3.5Z"
+        // A board with a small map in its lower right corner.
+        case .seedSmallMap: return "M5 4.5h14a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2-2v-11a2 2 0 0 1 2-2z M11.5 11h6.5v5.5h-6.5Z"
         }
     }
 }
