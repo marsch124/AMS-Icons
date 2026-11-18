@@ -230,7 +230,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedPhase: return "Phase"
         case .seedComesAfter: return "Comes after"
         case .seedPicture: return "Picture"
-        case .seedSaveStarter: return "Save as starter"
+        case .seedSaveStarter: return "Save starter"
         }
     }
 
