@@ -18,8 +18,9 @@ final class AppMarkTests: XCTestCase {
             "gridFlat", "gridEdge", "gridStanding", "gridAuto", "gridBin", "gridBins", "gridStrip", "gridPrintFile",
             "arrowUp", "arrowLeft", "arrowRight", "deckWindowTop", "deckWindowBottom",
             "lockOpen", "star",
+            "seedMindMap", "seedBox", "seedRound", "seedDiamond", "seedOval", "seedArrow", "seedNote", "seedText", "seedFrame", "seedBoard", "seedSprout", "seedPin", "seedFit", "seedStarter", "redo", "duplicate",
         ])
-        XCTAssertEqual(AppMark.allCases.count, 108)
+        XCTAssertEqual(AppMark.allCases.count, 124)
     }
 
     func testEveryMarkKeepsTheHandDrawnRules() {

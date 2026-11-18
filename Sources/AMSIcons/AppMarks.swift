@@ -32,6 +32,10 @@ public enum AppMark: String, CaseIterable, Sendable {
     case lockOpen
     // A star for a rating: drawn as an outline, the app fills it for a given star (AMS Reading Companion, 17 Nov 2026)
     case star
+    // AMS Seedboard (18 Nov 2026): the mind-map and diagram tool's own marks, and the two general marks it missed.
+    case seedMindMap, seedBox, seedRound, seedDiamond, seedOval, seedArrow, seedNote, seedText
+    case seedFrame, seedBoard, seedSprout, seedPin, seedFit, seedStarter
+    case redo, duplicate
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -144,6 +148,22 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .arrowRight: return "Right"
         case .deckWindowTop: return "Window top"
         case .deckWindowBottom: return "Window bottom"
+        case .seedMindMap: return "Mind map"
+        case .seedBox: return "Box"
+        case .seedRound: return "Round box"
+        case .seedDiamond: return "Diamond"
+        case .seedOval: return "Oval"
+        case .seedArrow: return "Arrow"
+        case .seedNote: return "Sticky note"
+        case .seedText: return "Text"
+        case .seedFrame: return "Frame"
+        case .seedBoard: return "Board"
+        case .seedSprout: return "Seed branches"
+        case .seedPin: return "Pin"
+        case .seedFit: return "Fit window"
+        case .seedStarter: return "Starter"
+        case .redo: return "Redo"
+        case .duplicate: return "Duplicate"
         }
     }
 
@@ -274,6 +294,22 @@ public enum AppMark: String, CaseIterable, Sendable {
         // The window of "Window left" and "Window right", split across: one line marks the half meant.
         case .deckWindowTop: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M3 12h18 M6.5 8.75h11"
         case .deckWindowBottom: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M3 12h18 M6.5 15.25h11"
+        case .seedMindMap: return "M4.25 12a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M9.25 12H19.75 M9.25 11C11.75 8 12.75 6.5 15.75 6.5H19.75 M9.25 13C11.75 16 12.75 17.5 15.75 17.5H19.75"
+        case .seedBox: return "M6.5 6.5h11a2.5 2.5 0 0 1 2.5 2.5v6a2.5 2.5 0 0 1 -2.5 2.5h-11a2.5 2.5 0 0 1 -2.5-2.5v-6a2.5 2.5 0 0 1 2.5-2.5z"
+        case .seedRound: return "M8.5 7h7a5 5 0 0 1 0 10h-7a5 5 0 0 1 0-10z"
+        case .seedDiamond: return "M12 4L20 12L12 20L4 12Z"
+        case .seedOval: return "M3.5 12a8.5 6 0 1 0 17 0a8.5 6 0 1 0 -17 0"
+        case .seedArrow: return "M5.75 18C10.75 18 9.75 9 17.75 9 M14.25 5.8L18.25 9L14.75 12.6"
+        case .seedNote: return "M5 5H19V14L14 19H5Z M14 19V14H19"
+        case .seedText: return "M6 6.5H18 M12 6.5V18"
+        case .seedFrame: return "M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8 M16 4H18.5A1.5 1.5 0 0 1 20 5.5V8 M20 16V18.5A1.5 1.5 0 0 1 18.5 20H16 M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"
+        case .seedBoard: return "M6.5 4.5h11a3 3 0 0 1 3 3v9a3 3 0 0 1 -3 3h-11a3 3 0 0 1 -3-3v-9a3 3 0 0 1 3-3z M12 16.5V10.5 M12 11.5C9.6 11.5 8 10 8 7.8C10.4 7.8 12 9.2 12 11.5Z M12 13.2C12 11 13.6 9.6 16 9.6C16 11.8 14.4 13.2 12 13.2Z"
+        case .seedSprout: return "M4.6 12a2.8 4 0 1 0 5.6 0a2.8 4 0 1 0 -5.6 0 M10.2 12H15.5 M9.9 10.6C11.9 8 13.1 6.5 15.9 6.5 M9.9 13.4C11.9 16 13.1 17.5 15.9 17.5 M16 6.5a1.7 1.7 0 1 0 3.4 0a1.7 1.7 0 1 0 -3.4 0 M15.6 12a1.7 1.7 0 1 0 3.4 0a1.7 1.7 0 1 0 -3.4 0 M16 17.5a1.7 1.7 0 1 0 3.4 0a1.7 1.7 0 1 0 -3.4 0"
+        case .seedPin: return "M12 21.5C8.5 17.5 5.5 13.8 5.5 9.5a6.5 6.5 0 0 1 13 0c0 4.3-3 8-6.5 12Z M9.7 9.5a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0 -4.6 0"
+        case .seedFit: return "M4 9V4H9 M15 4H20V9 M20 15V20H15 M9 20H4V15 M9.5 9.5h5v5h-5z"
+        case .seedStarter: return "M13.5 3.5H7A1.5 1.5 0 0 0 5.5 5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8.5Z M13.5 3.5v5h5 M12 11.5v5.5 M9.25 14.25h5.5"
+        case .redo: return "M19.5 9.5h-9a5.5 5.5 0 0 0 0 11H15 M16 6l3.5 3.5L16 13"
+        case .duplicate: return "M9 15H6a2 2 0 0 1 -2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3.5 M11 9.5h7a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2-2v-7a2 2 0 0 1 2-2z"
         }
     }
 }
