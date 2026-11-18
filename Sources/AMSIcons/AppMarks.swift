@@ -54,6 +54,10 @@ public enum AppMark: String, CaseIterable, Sendable {
     case seedPicture, seedSaveStarter
     // Seedboard 0.4
     case seedCrop, seedCaption
+    // Seedboard 0.5 (18 Nov 2026): the door, the next note and shape, turning and tidying things,
+    // the timeline's Done and Catch up, and the Share page.
+    case seedDoor, seedNextNote, seedNextShape, seedTurnInto, seedTidy, seedByColour, seedBreakNotes
+    case seedDone, seedCatchUp, seedShare, seedPDF, seedWords, seedPrint, seedCamera, seedScan
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -235,6 +239,21 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedSaveStarter: return "Save starter"
         case .seedCrop: return "Crop"
         case .seedCaption: return "Caption"
+        case .seedDoor: return "Door"
+        case .seedNextNote: return "Next note"
+        case .seedNextShape: return "Next shape"
+        case .seedTurnInto: return "Turn into"
+        case .seedTidy: return "Tidy"
+        case .seedByColour: return "By colour"
+        case .seedBreakNotes: return "Into notes"
+        case .seedDone: return "Done"
+        case .seedCatchUp: return "Catch up"
+        case .seedShare: return "Share"
+        case .seedPDF: return "PDF"
+        case .seedWords: return "Words"
+        case .seedPrint: return "Print"
+        case .seedCamera: return "Camera"
+        case .seedScan: return "Scan"
         }
     }
 
@@ -483,6 +502,37 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedSaveStarter: return "M11.5 6.5H5.75A1.75 1.75 0 0 0 4 8.25v10A1.75 1.75 0 0 0 5.75 20h7.5A1.75 1.75 0 0 0 15 18.25V10Z M11.5 6.5v3.5h3.5 M19 3.75v4.5 M16.75 6h4.5"
         case .seedCrop: return "M7 3.5V17H20.5 M17 20.5V7H3.5"
         case .seedCaption: return "M5.5 3.5h13a2 2 0 0 1 2 2v5.5a2 2 0 0 1 -2 2h-13a2 2 0 0 1 -2-2v-5.5a2 2 0 0 1 2-2z M7.5 10.5L10.5 7.5L12.5 9.5L14 8L16.5 10.5 M4.5 17H19.5 M4.5 20.5H13"
+        // The 15 marks drawn for AMS Seedboard 0.5 (18 Nov 2026).
+        // A door on its threshold, with its knob: the way into another board.
+        case .seedDoor: return "M6.5 20.5V5.5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v15 M3 20.5h18 M14 12.5h.01"
+        // A sticky note with its folded corner, and a plus beside that corner for the next one.
+        case .seedNextNote: return "M4 3.5h11.5V11L11 15.5H4Z M11 15.5V11h4.5 M15.75 18.25h5 M18.25 15.75v5"
+        // A box, and a plus to its right for the next one (the idea's plus hangs under it on a stem).
+        case .seedNextShape: return "M5 8.25h5a2 2 0 0 1 2 2v3.5a2 2 0 0 1 -2 2h-5a2 2 0 0 1 -2-2v-3.5a2 2 0 0 1 2-2z M15.5 12h5 M18 9.5v5"
+        // A ring, and a bent arrow from it down to a box: one thing becomes another kind.
+        case .seedTurnInto: return "M3.75 7a3.25 3.25 0 1 0 6.5 0a3.25 3.25 0 1 0 -6.5 0 M13 6.5h1.5a3 3 0 0 1 3 3v1.5 M15 8.6 17.5 11.1 20 8.6 M15.5 15h4a1.5 1.5 0 0 1 1.5 1.5v2.5a1.5 1.5 0 0 1 -1.5 1.5h-4a1.5 1.5 0 0 1 -1.5-1.5v-2.5a1.5 1.5 0 0 1 1.5-1.5z"
+        // Three squares already in their places of a grid and the fourth still askew.
+        case .seedTidy: return "M4 4h6.5v6.5H4Z M13.5 4H20v6.5h-6.5Z M4 13.5h6.5V20H4Z M15.85 13.4 21.1 15.85 18.65 21.1 13.4 18.65Z"
+        // Two columns of things, each under its own colour: a ring over one, a full dot over the other.
+        case .seedByColour: return "M4.5 4.75a2 2 0 1 0 4 0a2 2 0 1 0 -4 0 M16.5 4.75a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M3.5 10h6v3.5h-6Z M3.5 17h6v3.5h-6Z M14.5 10h6v3.5h-6Z"
+        // An idea on top and two sticky notes under it, joined by a fork.
+        case .seedBreakNotes: return "M8.5 3.5h7a2.25 2.25 0 0 1 0 4.5h-7a2.25 2.25 0 0 1 0-4.5z M7 13.5 12 8l5 5.5 M3.5 13.5h7v4.5L8 20.5H3.5Z M13.5 13.5h7v4.5L18 20.5h-4.5Z"
+        // A bar of the timeline and a tick after its end (the plain Bar has a grip dot at each end).
+        case .seedDone: return "M3 8.5h8v7H3Z M14.5 12.5l2.3 2.8 4.2-7.3"
+        // The upright line of today, two bars that now start on it, and the arrow that pushed them there.
+        case .seedCatchUp: return "M11 3.5v17 M11 5.5h9.5v4H11 M11 14.5h6.5v4H11 M3 12h5.2 M5.8 9.6 8.2 12 5.8 14.4"
+        // Three rings joined by two lines: one thing going to two places (Export is the tray with the arrow up).
+        case .seedShare: return "M15.5 6.2a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0 -4.6 0 M3.9 12a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0 -4.6 0 M15.5 17.8a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0 -4.6 0 M8.3 10.9 15.7 7.3 M8.3 13.1l7.4 3.6"
+        // A page with a folded corner and a label across its lower left, with one word on it.
+        case .seedPDF: return "M7 11.5V3.5h7.5l5 5v12H7v-3 M14.5 3.5v5h5 M3.5 11.5H15v6H3.5Z M6.5 14.5h5.5"
+        // Four lines of words with a ragged right edge, and no frame round them.
+        case .seedWords: return "M4 5.5h16 M4 10h12.5 M4 14.5h16 M4 19h8.5"
+        // The same printer as the hand-drawn "printer": one printer in the family, not two.
+        case .seedPrint: return "M7 9V4h10v5 M5.5 9h13a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z M7 14.5h10V20H7Z M17 12h.5"
+        // The same camera as the hand-drawn "camera": one camera in the family, not two.
+        case .seedCamera: return "M3.5 8h4l1.5-2.5h6L16.5 8h4v11h-17Z M8.6 13.3a3.4 3.4 0 1 0 6.8 0a3.4 3.4 0 1 0 -6.8 0"
+        // A page with the light bar across it: drawn above the bar, only its two lower corners below.
+        case .seedScan: return "M6.5 12V3.5h7l4 4V12 M13.5 3.5v4h4 M3 12h18 M6.5 15.5v5h3.5 M14 20.5h3.5v-5"
         }
     }
 }
