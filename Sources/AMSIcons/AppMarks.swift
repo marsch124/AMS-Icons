@@ -60,6 +60,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case seedDone, seedCatchUp, seedShare, seedPDF, seedWords, seedPrint, seedCamera, seedScan
     // Seedboard 0.10 (19 Nov 2026): the buttons of 0.9 that borrowed a neighbour's mark or showed only words.
     case seedBalance, seedHighlighter, seedLasso, seedMakeTyped, seedDrawOnIt, seedVote, seedTickList, seedLegend, seedFocus, seedShowFrames, seedSmallMap
+    // Seedboard 0.12: the Draw plate's ruler and fade, and "Read this" (handwriting to a note, the sketch stays).
+    case seedRuler, seedFade, seedReadThis
     // AMS Persistent Reminder (19 Nov 2026)
     case bell
 
@@ -269,6 +271,9 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedFocus: return "Focus"
         case .seedShowFrames: return "Show frames"
         case .seedSmallMap: return "Small map"
+        case .seedRuler: return "Ruler"
+        case .seedFade: return "Fade"
+        case .seedReadThis: return "Read this"
         case .bell: return "Reminder"
         }
     }
@@ -572,6 +577,12 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedShowFrames: return "M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8 M16 4H18.5A1.5 1.5 0 0 1 20 5.5V8 M20 16V18.5A1.5 1.5 0 0 1 18.5 20H16 M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16 M10 8.5l5.5 3.5l-5.5 3.5Z"
         // A board with a small map in its lower right corner.
         case .seedSmallMap: return "M5 4.5h14a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2-2v-11a2 2 0 0 1 2-2z M11.5 11h6.5v5.5h-6.5Z"
+        // A slanted ruler with three marks on its edge.
+        case .seedRuler: return "M2.9 16.5L16.5 2.9L21.1 7.5L7.5 21.1Z M6.3 13.1l1.6 1.6 M9.7 9.7l2.5 2.5 M13.1 6.3l1.6 1.6"
+        // A pencil line that breaks up into shorter strokes and dots: drawing shown lighter.
+        case .seedFade: return "M3 14C4.5 9 6.5 9 8 12.5 M10.5 14.2l1.3.3 M14.2 13.6h1.2 M18 12.3h.01 M20.8 10.6h.01"
+        // A scribble beside a note with two lines: handwriting read onto a note.
+        case .seedReadThis: return "M3.5 9C4.5 5.5 5.6 5.5 6.1 8S7.7 10.5 8.6 7 M11 11.5h9.5v6l-3 3H11Z M13.5 14.5h4.5 M13.5 17.5h2.5"
         // A bell with its clapper: a reminder that keeps ringing.
         case .bell: return "M12 3.2v1.8 M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15Z M10 20.5a2 2 0 0 0 4 0"
         }

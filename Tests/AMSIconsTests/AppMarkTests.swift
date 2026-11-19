@@ -34,9 +34,10 @@ final class AppMarkTests: XCTestCase {
             "seedDoor", "seedNextNote", "seedNextShape", "seedTurnInto", "seedTidy", "seedByColour", "seedBreakNotes",
             "seedDone", "seedCatchUp", "seedShare", "seedPDF", "seedWords", "seedPrint", "seedCamera", "seedScan",
             "seedBalance", "seedHighlighter", "seedLasso", "seedMakeTyped", "seedDrawOnIt", "seedVote", "seedTickList", "seedLegend", "seedFocus", "seedShowFrames", "seedSmallMap",
+            "seedRuler", "seedFade", "seedReadThis",
             "bell",
         ])
-        XCTAssertEqual(AppMark.allCases.count, 204)
+        XCTAssertEqual(AppMark.allCases.count, 207)
     }
 
     func testEveryMarkKeepsTheHandDrawnRules() {
