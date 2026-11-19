@@ -60,6 +60,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case seedDone, seedCatchUp, seedShare, seedPDF, seedWords, seedPrint, seedCamera, seedScan
     // Seedboard 0.10 (19 Nov 2026): the buttons of 0.9 that borrowed a neighbour's mark or showed only words.
     case seedBalance, seedHighlighter, seedLasso, seedMakeTyped, seedDrawOnIt, seedVote, seedTickList, seedLegend, seedFocus, seedShowFrames, seedSmallMap
+    // AMS Persistent Reminder (19 Nov 2026)
+    case bell
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -267,6 +269,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedFocus: return "Focus"
         case .seedShowFrames: return "Show frames"
         case .seedSmallMap: return "Small map"
+        case .bell: return "Reminder"
         }
     }
 
@@ -569,6 +572,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedShowFrames: return "M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8 M16 4H18.5A1.5 1.5 0 0 1 20 5.5V8 M20 16V18.5A1.5 1.5 0 0 1 18.5 20H16 M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16 M10 8.5l5.5 3.5l-5.5 3.5Z"
         // A board with a small map in its lower right corner.
         case .seedSmallMap: return "M5 4.5h14a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2-2v-11a2 2 0 0 1 2-2z M11.5 11h6.5v5.5h-6.5Z"
+        // A bell with its clapper: a reminder that keeps ringing.
+        case .bell: return "M12 3.2v1.8 M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15Z M10 20.5a2 2 0 0 0 4 0"
         }
     }
 }
