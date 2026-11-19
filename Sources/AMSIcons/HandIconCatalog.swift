@@ -137,6 +137,8 @@ public enum HandIconCatalog {
         i("xmastree", "Christmas", .city, "M12 3 7.5 8.5H10l-4 5.5h3L5 18.5h14L15 14h3l-4-5.5h2.5Z M12 18.5v3"),
         i("cinema", "Cinema", .city, "M3.5 10h17v10.5h-17Z M3.5 10V6h17v4 M7 6l2 4 M11.5 6l2 4 M16 6l2 4"),
         i("ferriswheel", "Fun fair", .city, "M5.5 9.5a6.5 6.5 0 1 0 13 0a6.5 6.5 0 1 0 -13 0 M12 3v13 M6.37 6.25l11.26 6.5 M6.37 12.75l11.26-6.5 M12 9.5 7.5 20.5 M12 9.5l4.5 11 M5 20.5h14"),
+        // 19 Nov 2026: drawn for AMS Shopping's Shopping tab.
+        i("cart", "Shopping cart", .city, "M2.5 4h2.6l2.3 10.2h10.4l2-7.2H6.2 M7.7 18.8a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0 M15 18.8a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0"),
 
         // MARK: Everyday
         i("laptop", "Work", .everyday, "M5 5.5h14v10H5Z M3 18.5h18"),

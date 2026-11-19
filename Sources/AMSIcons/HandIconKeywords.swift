@@ -160,6 +160,7 @@ public enum HandIconKeywords {
         "picnic": ["basket", "picknick", "korg", "korb"],
         "bbq": ["bbq", "grill", "grilling", "grilla", "grillen"],
         "shopping": ["shop", "bag", "handla", "shoppa", "kasse", "einkaufen", "tasche"],
+        "cart": ["trolley", "groceries", "supermarket", "kundvagn", "einkaufswagen", "carro"],
         "party": ["celebration", "birthday", "festival", "fest", "kalas", "firande", "födelsedag", "feier",
                   "geburtstag"],
         "gift": ["present", "christmas", "gåva", "jul", "geschenk", "weihnachten"],
