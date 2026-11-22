@@ -64,6 +64,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case seedRuler, seedFade, seedReadThis
     // AMS Persistent Reminder (19 Nov 2026)
     case bell
+    // AMS PARAGON build 361 (22 Nov 2026): two people, a project shared with someone
+    case people
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -275,6 +277,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedFade: return "Fade"
         case .seedReadThis: return "Read this"
         case .bell: return "Reminder"
+        case .people: return "Shared"
         }
     }
 
@@ -584,6 +587,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         // A scribble beside a note with two lines: handwriting read onto a note.
         case .seedReadThis: return "M3.5 9C4.5 5.5 5.6 5.5 6.1 8S7.7 10.5 8.6 7 M11 11.5h9.5v6l-3 3H11Z M13.5 14.5h4.5 M13.5 17.5h2.5"
         // A bell with its clapper: a reminder that keeps ringing.
+        case .people: return "M10 6a3 3 0 1 0 0 6a3 3 0 1 0 0-6Z M4 20c0-3.6 2.7-6 6-6s6 2.4 6 6 M15.2 5.3a2.6 2.6 0 1 1 1.3 4.9 M17.8 14.2c2.2.6 3.7 2.7 3.7 5.8"
         case .bell: return "M12 3.2v1.8 M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15Z M10 20.5a2 2 0 0 0 4 0"
         }
     }
