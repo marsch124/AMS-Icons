@@ -171,5 +171,6 @@ public enum HandIconCatalog {
         i("printer", "Printer", .everyday, "M7 9V4h10v5 M5.5 9h13a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z M7 14.5h10V20H7Z M17 12h.5"),
         i("drawer", "Drawer", .everyday, "M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z M3 12h18 M12 4v8 M10 16h4"),
         i("home", "Home", .everyday, "M3.5 11.5 12 4l8.5 7.5 M6 9.5v10h12v-10 M10 19.5v-5.5h4v5.5"),
+        i("envelope", "Mail", .everyday, "M5 5.5h14c.8 0 1.5.7 1.5 1.5v10c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5V7c0-.8.7-1.5 1.5-1.5Z M4.2 6.6 12 13l7.8-6.4"),
     ]
 }

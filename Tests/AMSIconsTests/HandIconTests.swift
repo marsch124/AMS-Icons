@@ -58,7 +58,7 @@ final class HandIconTests: XCTestCase {
 
     func testTheyAreThe132OfThePackingAppInTheirOrder() {
         let all = HandIconCatalog.all
-        XCTAssertEqual(all.count, 142, "the Packing app's 132, plus gym and pushup (WorkoutCompanion 1.9), keycap, edit, printer and drawer, microphone and microphone-off (Mic Check), home (Deck Mate), cart (Shopping); a new drawing changes this number on purpose")
+        XCTAssertEqual(all.count, 143, "the Packing app's 132, plus gym and pushup (WorkoutCompanion 1.9), keycap, edit, printer and drawer, microphone and microphone-off (Mic Check), home (Deck Mate), cart (Shopping), envelope (Mail Menu); a new drawing changes this number on purpose")
         XCTAssertEqual(IconLibrary.hand, all)
         XCTAssertEqual(Self.storedKeys.map { $0.group }, HandIconGroup.allCases)
         XCTAssertEqual(Self.storedKeys.flatMap { $0.keys }.count, 132)

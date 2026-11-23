@@ -224,5 +224,6 @@ public enum HandIconKeywords {
                  "anzug", "krawatte"],
         "pram": ["stroller", "pushchair", "buggy", "baby", "barnvagn", "sittvagn", "kinderwagen"],
         "home": ["house", "start", "start page", "main page", "hem", "hus", "startsida", "zuhause", "haus", "startseite"],
+        "envelope": ["email", "e-mail", "letter", "post", "message", "inbox", "brev", "e-post", "mejl", "kuvert", "brief", "umschlag", "nachricht"],
     ]
 }
