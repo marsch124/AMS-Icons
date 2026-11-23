@@ -66,6 +66,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case bell
     // AMS PARAGON build 361 (22 Nov 2026): two people, a project shared with someone
     case people
+    // AMS Financial Steward (23 Nov 2026): the three app-icon candidates, a key, a ship's wheel, a rising line with a coin
+    case stewardKey, stewardWheel, stewardGrowth
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -278,6 +280,9 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .seedReadThis: return "Read this"
         case .bell: return "Reminder"
         case .people: return "Shared"
+        case .stewardKey: return "Steward key"
+        case .stewardWheel: return "Ship wheel"
+        case .stewardGrowth: return "Growth coin"
         }
     }
 
@@ -587,6 +592,12 @@ public enum AppMark: String, CaseIterable, Sendable {
         // A scribble beside a note with two lines: handwriting read onto a note.
         case .seedReadThis: return "M3.5 9C4.5 5.5 5.6 5.5 6.1 8S7.7 10.5 8.6 7 M11 11.5h9.5v6l-3 3H11Z M13.5 14.5h4.5 M13.5 17.5h2.5"
         // A bell with its clapper: a reminder that keeps ringing.
+        // A key on the slant: a round bow, a shaft and two teeth.
+        case .stewardKey: return "M7 13.2a3.8 3.8 0 1 0 0 7.6a3.8 3.8 0 1 0 0-7.6Z M9.7 14.3L20.5 3.5 M17.5 6.5l2.5 2.5 M14.5 9.5l2 2"
+        // A ship's wheel: a rim, a hub, eight spokes that run out as handles.
+        case .stewardWheel: return "M12 6a6 6 0 1 0 0 12a6 6 0 1 0 0-12Z M12 10.2a1.8 1.8 0 1 0 0 3.6a1.8 1.8 0 1 0 0-3.6Z M12 2V10.2 M12 13.8V22 M2 12H10.2 M13.8 12H22 M13.3 10.7L18.4 5.6 M10.7 10.7L5.6 5.6 M13.3 13.3L18.4 18.4 M10.7 13.3L5.6 18.4"
+        // A line that rises over a base line, and a small coin above it.
+        case .stewardGrowth: return "M3.5 21H20.5 M3.5 17.5l4.5-5 3.5 3 3-3.5 M17.5 2.6a3.4 3.4 0 1 0 0 6.8a3.4 3.4 0 1 0 0-6.8Z"
         case .people: return "M10 6a3 3 0 1 0 0 6a3 3 0 1 0 0-6Z M4 20c0-3.6 2.7-6 6-6s6 2.4 6 6 M15.2 5.3a2.6 2.6 0 1 1 1.3 4.9 M17.8 14.2c2.2.6 3.7 2.7 3.7 5.8"
         case .bell: return "M12 3.2v1.8 M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15Z M10 20.5a2 2 0 0 0 4 0"
         }

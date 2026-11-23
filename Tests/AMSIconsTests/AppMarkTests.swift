@@ -36,8 +36,10 @@ final class AppMarkTests: XCTestCase {
             "seedBalance", "seedHighlighter", "seedLasso", "seedMakeTyped", "seedDrawOnIt", "seedVote", "seedTickList", "seedLegend", "seedFocus", "seedShowFrames", "seedSmallMap",
             "seedRuler", "seedFade", "seedReadThis",
             "bell",
+            "people",
+            "stewardKey", "stewardWheel", "stewardGrowth",
         ])
-        XCTAssertEqual(AppMark.allCases.count, 207)
+        XCTAssertEqual(AppMark.allCases.count, 211)
     }
 
     func testEveryMarkKeepsTheHandDrawnRules() {
