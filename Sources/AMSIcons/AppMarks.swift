@@ -285,7 +285,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .stewardKey: return "Steward key"
         case .stewardWheel: return "Ship wheel"
         case .stewardGrowth: return "Growth coin"
-        case .fan: return "M11.14 10.27C9.89 7.58 7.58 5.66 8.54 3.36C9.5 1.82 14.5 2.02 16.42 4.7C17.18 6.05 15.07 8.54 13.63 10.94 M13.93 12.12C16.88 12.38 19.7 11.34 21.21 13.32C22.07 14.92 19.39 19.16 16.11 19.48C14.56 19.46 13.46 16.39 12.1 13.94 M10.93 13.61C9.23 16.04 8.72 19 6.25 19.32C4.43 19.26 2.11 14.82 3.47 11.82C4.26 10.49 7.47 11.07 10.27 11.12 M10 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0Z"
+        case .fan: return "Fan"
         }
     }
 
