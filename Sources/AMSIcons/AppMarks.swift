@@ -68,6 +68,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case people
     // AMS Financial Steward (23 Nov 2026): the three app-icon candidates, a key, a ship's wheel, a rising line with a coin
     case stewardKey, stewardWheel, stewardGrowth
+    // AMS Fan Menu (24 Nov 2026): a three-blade fan
+    case fan
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -283,6 +285,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .stewardKey: return "Steward key"
         case .stewardWheel: return "Ship wheel"
         case .stewardGrowth: return "Growth coin"
+        case .fan: return "Fan"
         }
     }
 
@@ -598,6 +601,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .stewardWheel: return "M12 6a6 6 0 1 0 0 12a6 6 0 1 0 0-12Z M12 10.2a1.8 1.8 0 1 0 0 3.6a1.8 1.8 0 1 0 0-3.6Z M12 2V10.2 M12 13.8V22 M2 12H10.2 M13.8 12H22 M13.3 10.7L18.4 5.6 M10.7 10.7L5.6 5.6 M13.3 13.3L18.4 18.4 M10.7 13.3L5.6 18.4"
         // A line that rises over a base line, and a small coin above it.
         case .stewardGrowth: return "M3.5 21H20.5 M3.5 17.5l4.5-5 3.5 3 3-3.5 M17.5 2.6a3.4 3.4 0 1 0 0 6.8a3.4 3.4 0 1 0 0-6.8Z"
+        // A three-blade fan around a small hub: AMS Fan Menu (24 Nov 2026).
+        case .fan: return "M12 10C9.4 8.6 8.8 4.4 11.6 3.2C13.8 2.4 15.6 4.6 14.8 6.8C14.3 8.2 13.2 9.2 12 10Z M13.73 13C16.24 11.45 20.18 13.03 19.82 16.05C19.41 18.36 16.61 18.82 15.1 17.02C14.14 15.89 13.82 14.44 13.73 13Z M10.27 13C10.36 15.95 7.02 18.57 4.58 16.75C2.79 15.24 3.79 12.58 6.1 12.18C7.56 11.91 8.98 12.36 10.27 13Z M10.9 12a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"
         case .people: return "M10 6a3 3 0 1 0 0 6a3 3 0 1 0 0-6Z M4 20c0-3.6 2.7-6 6-6s6 2.4 6 6 M15.2 5.3a2.6 2.6 0 1 1 1.3 4.9 M17.8 14.2c2.2.6 3.7 2.7 3.7 5.8"
         case .bell: return "M12 3.2v1.8 M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15Z M10 20.5a2 2 0 0 0 4 0"
         }

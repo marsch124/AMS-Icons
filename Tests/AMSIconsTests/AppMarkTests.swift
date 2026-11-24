@@ -38,8 +38,9 @@ final class AppMarkTests: XCTestCase {
             "bell",
             "people",
             "stewardKey", "stewardWheel", "stewardGrowth",
+            "fan",
         ])
-        XCTAssertEqual(AppMark.allCases.count, 211)
+        XCTAssertEqual(AppMark.allCases.count, 212)
     }
 
     func testEveryMarkKeepsTheHandDrawnRules() {
