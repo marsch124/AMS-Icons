@@ -72,6 +72,10 @@ public enum AppMark: String, CaseIterable, Sendable {
     case fan
     // AMS Deck Mate iPhone and iPad 0.32 (25 Nov 2026): "Explain" reads what a key does (a question mark in a ring)
     case deckExplain
+    // AMS Triathlon Training (25 Nov 2026): the app's own hand-drawn sport, plan and button marks (its rest-day moon is the library's Night).
+    case triBack, triBike, triBreathing, triCamera, triCheck, triClock, triCloud, triCounts, triHeart, triHike, triMeditation
+    case triMic, triMobility, triOther, triPen, triPlan, triPlus, triProgress, triRace, triRowing, triRun, triSettings
+    case triShare, triSki, triStrength, triStretch, triSwim, triSync, triToday, triWalk, triYoga
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -289,6 +293,37 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .stewardWheel: return "Ship wheel"
         case .stewardGrowth: return "Growth coin"
         case .fan: return "Fan"
+        case .triBack: return "Tri back"
+        case .triBike: return "Tri bike"
+        case .triBreathing: return "Tri breathing"
+        case .triCamera: return "Tri camera"
+        case .triCheck: return "Tri check"
+        case .triClock: return "Tri clock"
+        case .triCloud: return "Tri cloud"
+        case .triCounts: return "Tri counts"
+        case .triHeart: return "Tri heart"
+        case .triHike: return "Tri hike"
+        case .triMeditation: return "Tri meditation"
+        case .triMic: return "Tri mic"
+        case .triMobility: return "Tri mobility"
+        case .triOther: return "Tri other"
+        case .triPen: return "Tri pen"
+        case .triPlan: return "Tri plan"
+        case .triPlus: return "Tri plus"
+        case .triProgress: return "Tri progress"
+        case .triRace: return "Tri race"
+        case .triRowing: return "Tri rowing"
+        case .triRun: return "Tri run"
+        case .triSettings: return "Tri settings"
+        case .triShare: return "Tri share"
+        case .triSki: return "Tri ski"
+        case .triStrength: return "Tri strength"
+        case .triStretch: return "Tri stretch"
+        case .triSwim: return "Tri swim"
+        case .triSync: return "Tri sync"
+        case .triToday: return "Tri today"
+        case .triWalk: return "Tri walk"
+        case .triYoga: return "Tri yoga"
         }
     }
 
@@ -609,6 +644,38 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .fan: return "M11.14 10.27C9.89 7.58 7.58 5.66 8.54 3.36C9.5 1.82 14.5 2.02 16.42 4.7C17.18 6.05 15.07 8.54 13.63 10.94 M13.93 12.12C16.88 12.38 19.7 11.34 21.21 13.32C22.07 14.92 19.39 19.16 16.11 19.48C14.56 19.46 13.46 16.39 12.1 13.94 M10.93 13.61C9.23 16.04 8.72 19 6.25 19.32C4.43 19.26 2.11 14.82 3.47 11.82C4.26 10.49 7.47 11.07 10.27 11.12 M10 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0Z"
         case .people: return "M10 6a3 3 0 1 0 0 6a3 3 0 1 0 0-6Z M4 20c0-3.6 2.7-6 6-6s6 2.4 6 6 M15.2 5.3a2.6 2.6 0 1 1 1.3 4.9 M17.8 14.2c2.2.6 3.7 2.7 3.7 5.8"
         case .bell: return "M12 3.2v1.8 M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15Z M10 20.5a2 2 0 0 0 4 0"
+        // AMS Triathlon Training: the drawings as the app had them. Back, tick, counts and plus are drawn at stroke 2.1 in the app (it passes lineWidth: 2.1).
+        case .triBack: return "M14.8 4.6c-2.5 2.4-4.9 4.9-7.2 7.5 2.3 2.6 4.7 5.1 7.2 7.4"
+        case .triBike: return "M2.4 17.1c0-2.2 1.7-3.9 3.9-3.9 2.1 0 3.8 1.7 3.8 3.9 0 2.1-1.7 3.8-3.8 3.8-2.2 0-3.9-1.7-3.9-3.8Z M14 17.1c0-2.2 1.7-3.9 3.8-3.9 2.2 0 3.9 1.7 3.9 3.9 0 2.1-1.7 3.8-3.9 3.8-2.1 0-3.8-1.7-3.8-3.8Z M6.3 17.1c1.9-2.6 3.8-5 5.9-7.3 1.9 2.4 3.8 4.8 5.6 7.3 M9.1 9.6c2 .2 4 .2 6 0 M14.9 5.3c.9-.1 1.8-.1 2.7 0 M16 5.4c.6 1.5 1.2 2.9 1.9 4.3"
+        case .triBreathing: return "M11.2 7.1c-.1 3.1-.2 6.2-.1 9.3-1.8 2.1-4.6 2.9-6.7 1.9-.9-3.3-.6-6.9 1.2-9.9 1.5-2.1 3.9-2.4 5.6-1.3Z M12.8 7.1c.1 3.1.2 6.2.1 9.3 1.8 2.1 4.6 2.9 6.7 1.9.9-3.3.6-6.9-1.2-9.9-1.5-2.1-3.9-2.4-5.6-1.3Z M12 3.3c0 1.9 0 3.8-.1 5.6"
+        case .triCamera: return "M3.6 8.3c2.1-.2 4.1-.2 6.2-.3l1.5-2.4c1.4-.1 2.8-.1 4.2 0l1.4 2.4c1.2 0 2.3.1 3.5.2.2 3.6.2 7.2 0 10.8-5.6.3-11.2.3-16.8 0-.2-3.6-.2-7.1 0-10.7Z M12.1 10.1c1.8 0 3.1 1.4 3.1 3.1s-1.4 3.2-3.1 3.2-3.2-1.4-3.2-3.2 1.4-3.1 3.2-3.1Z"
+        case .triCheck: return "M4.7 12.5c1.6 1.6 3 3.2 4.3 5 3.4-5.6 7.4-10.6 11.4-15"
+        case .triClock: return "M3.6 12c0-4.7 3.8-8.5 8.5-8.5 4.6 0 8.4 3.8 8.4 8.5 0 4.6-3.8 8.4-8.4 8.4-4.7 0-8.5-3.8-8.5-8.4Z M12 7.2c-.1 1.7-.1 3.3 0 4.9 1.3.6 2.5 1.3 3.7 2.1"
+        case .triCloud: return "M6.6 18.8c-2.3.1-4-1.5-4.1-3.6-.1-1.9 1.3-3.6 3.2-3.9.2-3.1 2.6-5.4 5.7-5.4 2.8 0 5.1 1.9 5.6 4.6 2.4.1 4.3 2 4.3 4.2 0 2.3-1.9 4.1-4.4 4.1-3.4.1-6.9.1-10.3 0Z"
+        case .triCounts: return "M3.4 12.6 3.4 17.4 M9.1 12.6 9.1 17.4 M14.8 12.6 14.8 17.4 M20.5 8.4 20.5 17.4"
+        case .triHeart: return "M12.1 20.3c-3.4-2.6-6.3-5.1-8-7.9-1.6-2.7-1-6 1.6-7.4 2.1-1.1 4.6-.4 6.3 1.6 1.8-2 4.3-2.7 6.4-1.5 2.5 1.4 3.1 4.7 1.4 7.4-1.7 2.8-4.5 5.3-7.7 7.8Z"
+        case .triHike: return "M12.8 4.3c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M14 6.3 11.4 13.3 M13.3 8.2 16.8 11 M11.4 13.3 7.7 20.7 M11.4 13.3 15 20.7 M12.6 6.9 8.6 6.9 7 13.1 10.9 13.1 M4.3 6.4 4.3 20.7"
+        case .triMeditation: return "M12 4.4c1.9 2.2 2.6 4.8 2.1 7.4-.4 2-1.1 3.4-2.1 4.6-1-1.2-1.7-2.6-2.1-4.6-.5-2.6.2-5.2 2.1-7.4Z M9.6 16.2c-2.6-.2-4.7-1.6-5.9-4 1.9-.9 4-1 5.9-.1M14.4 16.2c2.6-.2 4.7-1.6 5.9-4-1.9-.9-4-1-5.9-.1 M5.2 19.4c4.5-.2 9.1-.2 13.6 0"
+        case .triMic: return "M9.4 4.6c0-1.5 1.2-2.7 2.7-2.7 1.4 0 2.6 1.2 2.6 2.7 0 2.4.1 4.7 0 7.1 0 1.4-1.2 2.6-2.6 2.6-1.5 0-2.7-1.2-2.7-2.6-.1-2.4-.1-4.7 0-7.1Z M5.6 10.9c-.1 3.4 2.7 6.3 6.4 6.3 3.6 0 6.5-2.9 6.4-6.3 M12 17.4c0 1.6 0 3.1-.1 4.6 M8.8 22.1c2.1-.2 4.2-.2 6.3 0"
+        case .triMobility: return "M10.1 3.6c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M12.1 7c-.1 2.5-.1 4.9 0 7.3 M6.6 9.3c1.9.8 3.7 1.3 5.6 1.4 1.9-.1 3.6-.6 5.4-1.4 M12.1 14.2c-1.3 2.4-2.8 4.6-4.6 6.6 M12.1 14.2c1.4 2.3 2.9 4.5 4.7 6.5"
+        case .triOther: return "M3.6 12c0-4.7 3.8-8.5 8.5-8.5 4.6 0 8.4 3.8 8.4 8.5 0 4.6-3.8 8.4-8.4 8.4-4.7 0-8.5-3.8-8.5-8.4Z M9.4 9.6c.2-1.4 1.3-2.3 2.7-2.3 1.5 0 2.6 1 2.6 2.4 0 1.8-2.5 2-2.6 4 M12.1 16.6h.01"
+        case .triPen: return "M7.3 16.8c2.9-3 5.8-5.9 8.8-8.8.6-.6 1.5-.6 2.1 0l.8.8c.6.6.6 1.5 0 2.1-2.9 3-5.8 5.9-8.8 8.8-1.3.4-2.7.8-4 1.1.3-1.4.7-2.7 1.1-4Z M15 9.2c1 1 2 2 3 2.9"
+        case .triPlan: return "M4.7 4.6c-.3 5-.2 10 0 14.9 5 .3 9.8.2 14.7 0 .3-5 .2-10 0-14.9-4.9-.3-9.8-.3-14.7 0Z M7.6 8.9h.01M7.6 12.4h.01M7.6 15.8h.01 M10.4 8.8c1.9-.2 3.7-.1 5.5.1 M10.4 12.3c1.9-.2 3.7-.1 5.5.1 M10.4 15.7c1.2-.2 2.4-.1 3.6.1"
+        case .triPlus: return "M12 5.5v13M5.5 12h13"
+        case .triProgress: return "M5 20V13 M12 20V9 M19 20V5"
+        case .triRace: return "M5.5 21.1c-.3-6-.3-12-.1-18 M5.7 4.4c4-.9 8-.7 12 .3-.2 2.5-.2 4.9 0 7.4-4-1-8-1.2-12-.3 M11.5 4.5c.2 2.5.2 4.9 0 7.4 M5.8 8c4-.9 8-.7 11.9.3"
+        case .triRowing: return "M2 8.4a3.2 3.2 0 1 0 6.4 0a3.2 3.2 0 1 0 -6.4 0Z M7.9 10.9c4.4 2.2 8.8 4.5 13.1 6.8 M12.4 13c.9.5 1.8.9 2.7 1.4 M4.6 11.6c-.5 2.7-1 5.4-1.4 8.1 M6.6 5.7c.7-1.2 1.6-2.2 2.7-3 M9.1 1.6c1 .5 1.9 1.1 2.7 1.9 M2.2 20.2c6.5-.2 13-.2 19.5 0"
+        case .triRun: return "M13.2 4.3c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M8.6 21.4c.9-2.2 1.9-4.2 3.1-6.2-1.1-1.2-2.1-2.4-3-3.7 M8.7 11.5c-.2 1.4-.6 2.6-1.2 3.8 M8.7 11.4c1.6-1.6 3.3-2.9 5.2-4 1 1.2 1.7 2.5 2.2 3.9 1.2.5 2.4.9 3.7 1.2 M11.7 15.2c1.4.7 2.5 1.7 3.4 3 .5 1.1.9 2.1 1.2 3.2 M4.3 9.9c1.4-.2 2.8-.2 4.2-.1"
+        case .triSettings: return "M4.2 7.3c.9-.1 1.8-.2 2.7-.2M11.5 7.1c2.8-.1 5.5 0 8.3.2 M7.05 7.2C7 6 7.95 5.05 9.2 5.05c1.3 0 2.15.95 2.15 2.15 0 1.3-.95 2.2-2.15 2.15C7.9 9.3 7.05 8.4 7.05 7.2Z M4.2 12.1c2.7-.2 5.4-.2 8.5-.2M17.3 11.9c.9 0 1.8.1 2.7.2 M12.85 12c-.05-1.25.9-2.15 2.15-2.15 1.3 0 2.15.95 2.15 2.15 0 1.3-.95 2.2-2.15 2.15-1.3-.05-2.15-.95-2.15-2.15Z M4.2 16.9c.5-.1 1-.1 1.5-.1M10.5 16.7c3.1-.1 6.2 0 9.3.2 M6.05 16.8C6 15.55 6.95 14.65 8.2 14.65c1.3 0 2.15.95 2.15 2.15 0 1.3-.95 2.2-2.15 2.15-1.3-.05-2.15-.95-2.15-2.15Z"
+        case .triShare: return "M12 3.4c0 4.3 0 8.5.1 12.7 M8.3 7c1.2-1.3 2.5-2.5 3.8-3.6 1.3 1.1 2.6 2.3 3.7 3.6 M7.6 11H5.5c-.3 3.1-.3 6.2 0 9.3 4.4.3 8.7.3 13 0 .3-3.1.3-6.2 0-9.3h-2.1"
+        case .triSki: return "M11.2 4.1c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M13 6.1 12.4 13.2 M12.7 8.1 16.4 10.4 M12.7 8.1 9 10.4 M12.4 13.2 10.6 19 M12.4 13.2 14.4 19 M16.6 10.6 17.6 19.4 M9.2 10.6 8.2 19.4 M5.8 19.8 19.2 19.8"
+        case .triStrength: return "M2.6 9.6c.1 1.7.1 3.3 0 5 M5.3 7.3c.2 3.1.2 6.2 0 9.4 M18.7 7.2c.2 3.2.2 6.4 0 9.5 M21.4 9.5c.1 1.7.1 3.4 0 5.1 M5.4 12c4.4-.3 8.8-.3 13.2 0"
+        case .triStretch: return "M7.6 3.9c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M9.6 7.3c-.4 2.3-.5 4.5-.4 6.8 M9.2 14.1c2.8-.4 5.6-.5 8.4-.3 M9.4 9.5c2.2.6 4.3 1.5 6.3 2.7 M4.2 20.6c1.7-2.3 3.4-4.5 5.2-6.6"
+        case .triSwim: return "M2.6 17.4c1.6-1.3 3-1.3 4.6 0 1.6 1.3 3 1.3 4.6 0 1.6-1.3 3-1.3 4.6 0 1.5 1.3 3 1.3 4.5 0 M2.6 21c1.6-1.3 3-1.3 4.6 0 1.6 1.3 3 1.3 4.6 0 1.6-1.3 3-1.3 4.6 0 1.5 1.3 3 1.3 4.5 0 M7.4 13.6c1.9-1.7 3.9-3.3 6.1-4.7 M10.9 11.1c1.6.4 3.1 1 4.6 1.8 M16.8 6.4c.05-1.05.85-1.85 1.9-1.85 1.05 0 1.85.8 1.85 1.85 0 1.1-.8 1.9-1.85 1.85-1.05-.05-1.9-.85-1.9-1.85Z"
+        case .triSync: return "M20.4 12.3c-.2 4.4-3.9 7.8-8.4 7.6-3.5-.1-6.5-2.5-7.5-5.8 M3.6 11.6c.3-4.4 4-7.7 8.4-7.5 3.5.2 6.4 2.6 7.4 5.9 M19.6 5.4c-.1 1.5-.1 3-.1 4.6-1.6.1-3.1.1-4.7 0 M4.4 18.6c.1-1.6.1-3.1.1-4.7 1.6-.1 3.1-.1 4.7 0"
+        case .triToday: return "M4.4 5.6c5.1-.3 10.2-.2 15.3 0 .3 4.7.2 9.3 0 13.9-5.1.3-10.2.2-15.3 0-.3-4.6-.2-9.2 0-13.9Z M4.6 9.7c5-.2 10-.2 15 0 M8.4 3.5c0 1.2 0 2.4-.1 3.5M15.7 3.4c.1 1.2.1 2.4 0 3.6 M9.3 14.4c1 1 1.8 2 2.5 3.1 1.4-2.4 2.9-4.5 4.6-6.4"
+        case .triWalk: return "M13.1 4.3c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M14.3 6.3 10.4 13.4 M13.2 8.3 17.6 9.9 M13.2 8.3 9.6 9.6 M10.4 13.4 6.2 20.6 M10.4 13.4 13.4 20.6 M13.4 20.6 17.2 20.6"
+        case .triYoga: return "M10.1 5.2c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M12.1 7.2 12.1 14.6 M12.1 8.8 6.6 17.4 M12.1 8.8 17.6 17.4 M12.1 14.6 5.6 18.6 11 20.4 M12.1 14.6 18.6 18.6 13.2 20.4"
         }
     }
 }
