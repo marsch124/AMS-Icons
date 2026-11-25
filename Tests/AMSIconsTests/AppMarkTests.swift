@@ -40,9 +40,9 @@ final class AppMarkTests: XCTestCase {
             "stewardKey", "stewardWheel", "stewardGrowth",
             "fan",
             "deckExplain",
-            "triBack", "triBike", "triBreathing", "triCamera", "triCheck", "triClock", "triCloud", "triCounts", "triHeart", "triHike", "triMeditation", "triMic", "triMobility", "triOther", "triPen", "triPlan", "triPlus", "triProgress", "triRace", "triRowing", "triRun", "triSettings", "triShare", "triSki", "triStrength", "triStretch", "triSwim", "triSync", "triToday", "triWalk", "triYoga",
+            "triBack", "triBike", "triBody", "triBreathing", "triCamera", "triCheck", "triClock", "triCloud", "triCounts", "triHeart", "triHike", "triMeditation", "triMic", "triMobility", "triOther", "triPen", "triPlan", "triPlus", "triProgress", "triRace", "triRowing", "triRun", "triSettings", "triShare", "triSki", "triStrength", "triStretch", "triSwim", "triSync", "triToday", "triWalk", "triYoga",
         ])
-        XCTAssertEqual(AppMark.allCases.count, 244)
+        XCTAssertEqual(AppMark.allCases.count, 245)
     }
 
     func testEveryMarkKeepsTheHandDrawnRules() {

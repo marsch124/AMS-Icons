@@ -73,7 +73,7 @@ public enum AppMark: String, CaseIterable, Sendable {
     // AMS Deck Mate iPhone and iPad 0.32 (25 Nov 2026): "Explain" reads what a key does (a question mark in a ring)
     case deckExplain
     // AMS Triathlon Training (25 Nov 2026): the app's own hand-drawn sport, plan and button marks (its rest-day moon is the library's Night).
-    case triBack, triBike, triBreathing, triCamera, triCheck, triClock, triCloud, triCounts, triHeart, triHike, triMeditation
+    case triBack, triBike, triBody, triBreathing, triCamera, triCheck, triClock, triCloud, triCounts, triHeart, triHike, triMeditation
     case triMic, triMobility, triOther, triPen, triPlan, triPlus, triProgress, triRace, triRowing, triRun, triSettings
     case triShare, triSki, triStrength, triStretch, triSwim, triSync, triToday, triWalk, triYoga
 
@@ -295,6 +295,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .fan: return "Fan"
         case .triBack: return "Tri back"
         case .triBike: return "Tri bike"
+        case .triBody: return "Tri body"
         case .triBreathing: return "Tri breathing"
         case .triCamera: return "Tri camera"
         case .triCheck: return "Tri check"
@@ -647,6 +648,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         // AMS Triathlon Training: the drawings as the app had them. Back, tick, counts and plus are drawn at stroke 2.1 in the app (it passes lineWidth: 2.1).
         case .triBack: return "M14.8 4.6c-2.5 2.4-4.9 4.9-7.2 7.5 2.3 2.6 4.7 5.1 7.2 7.4"
         case .triBike: return "M2.4 17.1c0-2.2 1.7-3.9 3.9-3.9 2.1 0 3.8 1.7 3.8 3.9 0 2.1-1.7 3.8-3.8 3.8-2.2 0-3.9-1.7-3.9-3.8Z M14 17.1c0-2.2 1.7-3.9 3.8-3.9 2.2 0 3.9 1.7 3.9 3.9 0 2.1-1.7 3.8-3.9 3.8-2.1 0-3.8-1.7-3.8-3.8Z M6.3 17.1c1.9-2.6 3.8-5 5.9-7.3 1.9 2.4 3.8 4.8 5.6 7.3 M9.1 9.6c2 .2 4 .2 6 0 M14.9 5.3c.9-.1 1.8-.1 2.7 0 M16 5.4c.6 1.5 1.2 2.9 1.9 4.3"
+        // Body: a heart with a heartbeat line across it (the app's Body page).
+        case .triBody: return "M12 20.2C12 20.2 3.6 15.4 3.6 9.6 3.6 6.9 5.7 4.8 8.2 4.8 9.8 4.8 11.2 5.6 12 6.9 12.8 5.6 14.2 4.8 15.8 4.8 18.3 4.8 20.4 6.9 20.4 9.6 20.4 15.4 12 20.2 12 20.2Z M8.2 12.2H9.8L10.9 9.8 13.1 14.4 14.2 12.2H15.8"
         case .triBreathing: return "M11.2 7.1c-.1 3.1-.2 6.2-.1 9.3-1.8 2.1-4.6 2.9-6.7 1.9-.9-3.3-.6-6.9 1.2-9.9 1.5-2.1 3.9-2.4 5.6-1.3Z M12.8 7.1c.1 3.1.2 6.2.1 9.3 1.8 2.1 4.6 2.9 6.7 1.9.9-3.3.6-6.9-1.2-9.9-1.5-2.1-3.9-2.4-5.6-1.3Z M12 3.3c0 1.9 0 3.8-.1 5.6"
         case .triCamera: return "M3.6 8.3c2.1-.2 4.1-.2 6.2-.3l1.5-2.4c1.4-.1 2.8-.1 4.2 0l1.4 2.4c1.2 0 2.3.1 3.5.2.2 3.6.2 7.2 0 10.8-5.6.3-11.2.3-16.8 0-.2-3.6-.2-7.1 0-10.7Z M12.1 10.1c1.8 0 3.1 1.4 3.1 3.1s-1.4 3.2-3.1 3.2-3.2-1.4-3.2-3.2 1.4-3.1 3.2-3.1Z"
         case .triCheck: return "M4.7 12.5c1.6 1.6 3 3.2 4.3 5 3.4-5.6 7.4-10.6 11.4-15"
