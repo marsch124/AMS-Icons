@@ -70,6 +70,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case stewardKey, stewardWheel, stewardGrowth
     // AMS Fan Menu (24 Nov 2026): a three-blade fan
     case fan
+    // AMS Deck Mate iPhone and iPad 0.32 (25 Nov 2026): "Explain" reads what a key does (a question mark in a ring)
+    case deckExplain
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -184,6 +186,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .deckWindowBottom: return "Window bottom"
         case .deckEject: return "Eject"
         case .deckVideo: return "Video meeting"
+        case .deckExplain: return "Explain"
         case .seedMindMap: return "Mind map"
         case .seedBox: return "Box"
         case .seedRound: return "Round box"
@@ -418,6 +421,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .deckWindowBottom: return "M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1 -1.5 1.5h-15a1.5 1.5 0 0 1 -1.5-1.5v-10a1.5 1.5 0 0 1 1.5-1.5z M3 12h18 M6.5 15.25h11"
         case .deckEject: return "M12 5l7.5 9h-15z M4.5 18.5h15"
         case .deckVideo: return "M5 6.5h8a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2-2v-7a2 2 0 0 1 2-2z M15 10.5l5.5-3v9l-5.5-3"
+        case .deckExplain: return "M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0 M9.5 9.4a2.6 2.6 0 0 1 5.1.8c0 1.7-2.6 2.1-2.6 3.9 M12 17.1v.01"
         case .seedMindMap: return "M4.25 12a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M9.25 12H19.75 M9.25 11C11.75 8 12.75 6.5 15.75 6.5H19.75 M9.25 13C11.75 16 12.75 17.5 15.75 17.5H19.75"
         case .seedBox: return "M6.5 6.5h11a2.5 2.5 0 0 1 2.5 2.5v6a2.5 2.5 0 0 1 -2.5 2.5h-11a2.5 2.5 0 0 1 -2.5-2.5v-6a2.5 2.5 0 0 1 2.5-2.5z"
         case .seedRound: return "M8.5 7h7a5 5 0 0 1 0 10h-7a5 5 0 0 1 0-10z"
