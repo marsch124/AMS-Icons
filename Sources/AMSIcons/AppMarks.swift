@@ -76,6 +76,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case triBack, triBike, triBody, triBreathing, triCamera, triCheck, triClock, triCloud, triCounts, triHeart, triHike, triMeditation
     case triMic, triMobility, triOther, triPen, triPlan, triPlus, triProgress, triRace, triRowing, triRun, triSettings
     case triShare, triSki, triStrength, triStretch, triSwim, triSync, triToday, triWalk, triYoga
+    // AMS Tria Menu 0.3 (26 Nov 2026): the training wave, three blocks of work on a rest line (the line of AMS Triathlon Training's app icon)
+    case trainingWave
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -325,6 +327,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .triToday: return "Tri today"
         case .triWalk: return "Tri walk"
         case .triYoga: return "Tri yoga"
+        case .trainingWave: return "Training wave"
         }
     }
 
@@ -679,6 +682,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .triToday: return "M4.4 5.6c5.1-.3 10.2-.2 15.3 0 .3 4.7.2 9.3 0 13.9-5.1.3-10.2.2-15.3 0-.3-4.6-.2-9.2 0-13.9Z M4.6 9.7c5-.2 10-.2 15 0 M8.4 3.5c0 1.2 0 2.4-.1 3.5M15.7 3.4c.1 1.2.1 2.4 0 3.6 M9.3 14.4c1 1 1.8 2 2.5 3.1 1.4-2.4 2.9-4.5 4.6-6.4"
         case .triWalk: return "M13.1 4.3c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M14.3 6.3 10.4 13.4 M13.2 8.3 17.6 9.9 M13.2 8.3 9.6 9.6 M10.4 13.4 6.2 20.6 M10.4 13.4 13.4 20.6 M13.4 20.6 17.2 20.6"
         case .triYoga: return "M10.1 5.2c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M12.1 7.2 12.1 14.6 M12.1 8.8 6.6 17.4 M12.1 8.8 17.6 17.4 M12.1 14.6 5.6 18.6 11 20.4 M12.1 14.6 18.6 18.6 13.2 20.4"
+        // AMS Tria Menu: the wave of AMS Triathlon Training's app icon (tools/app-icon.svg there) on the 24-point grid: three blocks, equal peaks.
+        case .trainingWave: return "M2.5 16.05 3.89 7.95h2.54l1.39 8.1h1.52l1.39-8.1h2.54l1.39 8.1h1.52l1.39-8.1h2.54l1.39 8.1"
         }
     }
 }
