@@ -80,6 +80,7 @@ public enum AppMark: String, CaseIterable, Sendable {
     case trainingWave
     // AMS SimCard Menu (27 Nov 2026): the SIM card, its signal, battery, speed, devices, messages, balance code, usage, place, restart, power and Wi-Fi
     case simCard, signalBars, modemBattery, speedArrows, devices, textMessage, balanceCode, newCard, graphBars, mapPin, restart, powerOff, wifiWaves
+    case simCardCharging
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -331,6 +332,7 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .triYoga: return "Tri yoga"
         case .trainingWave: return "Training wave"
         case .simCard: return "SIM card"
+        case .simCardCharging: return "SIM charging"
         case .signalBars: return "Signal"
         case .modemBattery: return "Battery"
         case .speedArrows: return "Speed"
@@ -701,6 +703,8 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .trainingWave: return "M2.5 16.05 3.89 7.95h2.54l1.39 8.1h1.52l1.39-8.1h2.54l1.39 8.1h1.52l1.39-8.1h2.54l1.39 8.1"
         // AMS SimCard Menu (27 Nov 2026).
         case .simCard: return "M8 2.5h6.5l4.5 4.5v12.5a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-15a2 2 0 0 1 2-2Z M9 11.5h6v6H9Z M9 14.5h6"
+        // The SIM card with a lightning bolt where the chip was: the modem is charging (AMS SimCard Menu 0.1.3).
+        case .simCardCharging: return "M8 2.5h6.5l4.5 4.5v12.5a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-15a2 2 0 0 1 2-2Z M13.8 8.8L10.3 14.2H13.7L10.7 18.6"
         case .signalBars: return "M5 19v-3 M9.7 19v-6 M14.3 19v-9 M19 19V6"
         case .modemBattery: return "M4 8h12.5a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5H4a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 4 8Z M21.5 11v2 M6 12h6"
         case .speedArrows: return "M8 4v16 M4.5 16.5L8 20l3.5-3.5 M16 20V4 M12.5 7.5L16 4l3.5 3.5"
