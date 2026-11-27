@@ -44,8 +44,9 @@ final class AppMarkTests: XCTestCase {
             "trainingWave",
             "simCard", "signalBars", "modemBattery", "speedArrows", "devices", "textMessage", "balanceCode", "newCard", "graphBars", "mapPin", "restart", "powerOff", "wifiWaves",
             "simCardCharging",
+            "typingCourse", "typingArcade", "typingFlame", "typingGhost", "typingQuote",
         ])
-        XCTAssertEqual(AppMark.allCases.count, 260)
+        XCTAssertEqual(AppMark.allCases.count, 265)
     }
 
     func testEveryMarkKeepsTheHandDrawnRules() {
