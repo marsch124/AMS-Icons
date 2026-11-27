@@ -78,6 +78,8 @@ public enum AppMark: String, CaseIterable, Sendable {
     case triShare, triSki, triStrength, triStretch, triSwim, triSync, triToday, triWalk, triYoga
     // AMS Tria Menu 0.3 (26 Nov 2026): the training wave, three blocks of work on a rest line (the line of AMS Triathlon Training's app icon)
     case trainingWave
+    // AMS SimCard Menu (27 Nov 2026): the SIM card, its signal, battery, speed, devices, messages, balance code, usage, place, restart, power and Wi-Fi
+    case simCard, signalBars, modemBattery, speedArrows, devices, textMessage, balanceCode, newCard, graphBars, mapPin, restart, powerOff, wifiWaves
 
     /// What VoiceOver says when the mark stands alone.
     public var label: String {
@@ -328,6 +330,19 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .triWalk: return "Tri walk"
         case .triYoga: return "Tri yoga"
         case .trainingWave: return "Training wave"
+        case .simCard: return "SIM card"
+        case .signalBars: return "Signal"
+        case .modemBattery: return "Battery"
+        case .speedArrows: return "Speed"
+        case .devices: return "Devices"
+        case .textMessage: return "Text message"
+        case .balanceCode: return "Code"
+        case .newCard: return "New card"
+        case .graphBars: return "Usage"
+        case .mapPin: return "Place"
+        case .restart: return "Restart"
+        case .powerOff: return "Power"
+        case .wifiWaves: return "Wi-Fi"
         }
     }
 
@@ -684,6 +699,20 @@ public enum AppMark: String, CaseIterable, Sendable {
         case .triYoga: return "M10.1 5.2c.05-1.15.9-2 2.05-2 1.1 0 1.95.85 1.95 2 0 1.15-.85 2.05-1.95 2-1.15-.05-2.05-.9-2.05-2Z M12.1 7.2 12.1 14.6 M12.1 8.8 6.6 17.4 M12.1 8.8 17.6 17.4 M12.1 14.6 5.6 18.6 11 20.4 M12.1 14.6 18.6 18.6 13.2 20.4"
         // AMS Tria Menu: the wave of AMS Triathlon Training's app icon (tools/app-icon.svg there) on the 24-point grid: three blocks, equal peaks.
         case .trainingWave: return "M2.5 16.05 3.89 7.95h2.54l1.39 8.1h1.52l1.39-8.1h2.54l1.39 8.1h1.52l1.39-8.1h2.54l1.39 8.1"
+        // AMS SimCard Menu (27 Nov 2026).
+        case .simCard: return "M8 2.5h6.5l4.5 4.5v12.5a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-15a2 2 0 0 1 2-2Z M9 11.5h6v6H9Z M9 14.5h6"
+        case .signalBars: return "M5 19v-3 M9.7 19v-6 M14.3 19v-9 M19 19V6"
+        case .modemBattery: return "M4 8h12.5a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5H4a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 4 8Z M21.5 11v2 M6 12h6"
+        case .speedArrows: return "M8 4v16 M4.5 16.5L8 20l3.5-3.5 M16 20V4 M12.5 7.5L16 4l3.5 3.5"
+        case .devices: return "M3 5.5h11v9H3Z M1.5 18.5h13 M17 9h4a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z"
+        case .textMessage: return "M5 4.5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4.5 4v-4H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z M8 9.5h8 M8 12.5h5"
+        case .balanceCode: return "M9.5 4L8 20 M16.5 4L15 20 M4.5 9h15.5 M4 15h15.5"
+        case .newCard: return "M5.5 3h5.5l3.5 3.5V19a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z M6.5 12h5v5h-5Z M18.5 12.5v6 M15.5 15.5h6"
+        case .graphBars: return "M3.5 3.5V20.5H20.5 M8 16v-4 M12.5 16V8 M17 16v-6"
+        case .mapPin: return "M12 21c-4-4.5-6-7.6-6-10.5a6 6 0 0 1 12 0c0 2.9-2 6-6 10.5Z M12 8.5a2.2 2.2 0 1 0 0 4.4a2.2 2.2 0 1 0 0-4.4Z"
+        case .restart: return "M4.5 12a7.5 7.5 0 1 0 2.2-5.3 M4.5 4.5v4.2h4.2"
+        case .powerOff: return "M12 3v8.5 M7.5 6.2a7.5 7.5 0 1 0 9 0"
+        case .wifiWaves: return "M2.5 9.5a14 14 0 0 1 19 0 M5.5 13a9.5 9.5 0 0 1 13 0 M8.5 16.4a5 5 0 0 1 7 0 M12 19.8h.01"
         }
     }
 }
